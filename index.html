@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tomas Blog</title>
+  <meta name="author" content="Tomas Lin">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="Tomas Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Tomas Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Tomas Blog</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-09T03:54:17.000Z"><a href="/2016/12/09/ReactReviewDay02/">2016-12-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/09/ReactReviewDay02/">ReactReviewDay02</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="React-回憶錄-PartII"><a href="#React-回憶錄-PartII" class="headerlink" title="React 回憶錄 PartII"></a>React 回憶錄 PartII</h2><p>本來今天應該要開始準備Redux的建置</p>
+<p>不過後來想想</p>
+<p>還是先解決CSS的問題</p>
+<h2 id="建立Redux的基本資料夾"><a href="#建立Redux的基本資料夾" class="headerlink" title="建立Redux的基本資料夾"></a>建立Redux的基本資料夾</h2><p>雖然這次還沒要開始加入Redux</p>
+<p>基本上一些資料夾已經可以事先建立</p>
+<p>建立完成後如下</p>
+<p><strong>src/</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── App.css</div><div class="line">├── App.js</div><div class="line">├── App.test.js</div><div class="line">├── actions</div><div class="line">├── components</div><div class="line">├── containers</div><div class="line">├── index.css</div><div class="line">├── index.js</div><div class="line">├── logo.svg</div><div class="line">├── reducers</div><div class="line">├── routes</div><div class="line">├── store</div><div class="line">└── utils</div></pre></td></tr></table></figure>
+<h2 id="整理程式碼"><a href="#整理程式碼" class="headerlink" title="整理程式碼"></a>整理程式碼</h2><p>在Containers 中建立一個資料夾 HomeScene</p>
+<p>在<code>containers/HomeScene/index.js</code> 增加如下</p>
+<p>import React, {Component} from ‘react’;<br>import logo from ‘./logo.svg’;<br>import ‘./styles.css’;</p>
+<pre><code>export default class HomeScene extends Component {
+
+  render() {
+    return (
+      &lt;div className=&quot;App&quot;&gt;
+        &lt;div className=&quot;App-header&quot;&gt;
+          &lt;img src={logo} className=&quot;App-logo&quot; alt=&quot;logo&quot;/&gt;
+          &lt;h2&gt;Welcome to React&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;p className=&quot;App-intro&quot;&gt;
+          To get started, edit
+          &lt;code&gt;src/App.js&lt;/code&gt;
+          and save to reload.
+        &lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+</code></pre><p>將 <code>App.js</code> 修改為</p>
+<pre><code>import React, {Component} from &apos;react&apos;;
+import HomeScene from &apos;./containers/HomeScene&apos;;
+
+class App extends Component {
+  render() {
+    return (&lt;HomeScene/&gt;);
+  }
+}
+</code></pre><p>  export default App;</p>
+<p>將<code>App.css</code> 移動到 <code>containers/HomeScene</code> 並重新命名為 <code>styles.css</code></p>
+<p> 再把logo.svg 移動到 <code>containers/HomeScene</code></p>
+<h2 id="Why"><a href="#Why" class="headerlink" title="Why??"></a>Why??</h2><p>每個Container我皆視為一整個頁面</p>
+<p>所以在命名為HomeScene</p>
+<p>而將所有使用到的CSS皆放置在同樣的一個頁面</p>
+<p>在各自的Module引用</p>
+<p>在編譯後</p>
+<p>會將CSS整理到Header 中的 Style Tag中</p>
+<p><img src="styleheader.png" alt="Image"></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="react">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-05T11:41:39.000Z"><a href="/2016/12/05/ReactReviewDay01/">2016-12-05</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/05/ReactReviewDay01/">ReactReviewDay01</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="React-回憶錄"><a href="#React-回憶錄" class="headerlink" title="React 回憶錄"></a>React 回憶錄</h1><h2 id="Create-a-new-app"><a href="#Create-a-new-app" class="headerlink" title="Create a new app"></a>Create a new app</h2><p>  以前記得如果要開始一個新的專案，需要自己寫gulp, Webpack, Babel………</p>
+<p>  等到真正開始寫React的時候，可能已經是一個月之後的事情了。</p>
+<p>  但是現在官方有提供了一個 Project create React APP的專案</p>
+<p>  <a href="https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html" target="_blank" rel="external">Create React APP</a></p>
+<p>  <a href="https://github.com/facebookincubator/create-react-app" target="_blank" rel="external">Github</a></p>
+<p>  <a href="https://github.com/facebookincubator/create-react-app#getting-started" target="_blank" rel="external">Install</a></p>
+<p>相依性套件只有一個react-scripts</p>
+<p><a href="https://github.com/firstlookmedia/react-scripts" target="_blank" rel="external">react-scripts</a></p>
+<p>這個套件提供了</p>
+<ol>
+<li><p>四個指令 start, build, test, test.watch</p>
+<p>start: 負責啟動一個開發者的測試 Server</p>
+<p>build: 將React bundle為一個js</p>
+<p>test: 使用jest測試你的React</p>
+<p>test.watch: 在開發的時候隨時檢查你的程式是否符合測試</p>
+</li>
+<li><p>webpack中已經包含了style-loader，所以可以將CSS模組化包在各個的元件中</p>
+</li>
+</ol>
+<h2 id="Create-react-app"><a href="#Create-react-app" class="headerlink" title="Create  react app"></a>Create  react app</h2><p>基本上已經將基本的骨架完成</p>
+<p>並且有相當完善的一個<a href="https://github.com/facebookincubator/create-react-app#getting-started" target="_blank" rel="external">文件</a>解說</p>
+<p>但是如果要使用Sass, Less, Css module目前尚未Support</p>
+<p>這些都是未來的Feature</p>
+<p>當然若是有興趣可以研究然後發PR</p>
+<h2 id="結構"><a href="#結構" class="headerlink" title="結構"></a>結構</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">my-app/</div><div class="line">README.md</div><div class="line">node_modules/</div><div class="line">package.json</div><div class="line">.gitignore</div><div class="line">public/</div><div class="line">  favicon.ico</div><div class="line">  index.html</div><div class="line">src/</div><div class="line">  App.css</div><div class="line">  App.js</div><div class="line">  App.test.js</div><div class="line">  index.css</div><div class="line">  index.js</div><div class="line">  logo.svg</div></pre></td></tr></table></figure>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;hello-world&quot;,</div><div class="line">  &quot;dependencies&quot;: &#123;</div><div class="line">    &quot;react&quot;: &quot;^15.2.1&quot;,</div><div class="line">    &quot;react-dom&quot;: &quot;^15.2.1&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;devDependencies&quot;: &#123;</div><div class="line">    &quot;react-scripts&quot;: &quot;0.1.0&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;start&quot;: &quot;react-scripts start&quot;,</div><div class="line">    &quot;build&quot;: &quot;react-scripts build&quot;,</div><div class="line">    &quot;eject&quot;: &quot;react-scripts eject&quot;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>src 就是你所有的React 檔案</p>
+<ul>
+<li><p>public/index.html 是這個頁面的Template</p>
+</li>
+<li><p>src/index.js 則是Javascript的進入點</p>
+</li>
+<li><p><strong>test</strong> 測試的程式碼</p>
+</li>
+</ul>
+<p>基本上建議這三個檔案不要移動與改名</p>
+<p>否則就會需要修改到他的react-scripts</p>
+<p>這樣就失去了我們使用這個骨架的意義了</p>
+<p>而其他檔案則可以依據各自需要調整結構</p>
+<p>算是自由度相當高的一個骨架</p>
+<h2 id="NPM-Scripts"><a href="#NPM-Scripts" class="headerlink" title="NPM Scripts"></a>NPM Scripts</h2><p>在Package.json中也有提供幾個已經可以使用的指令</p>
+<h3 id="npm-start"><a href="#npm-start" class="headerlink" title="npm start"></a>npm start</h3><p>啟動一個測試的Server</p>
+<p>URL: <a href="http://localhost:30100" target="_blank" rel="external">http://localhost:3000</a></p>
+<h3 id="npm-test"><a href="#npm-test" class="headerlink" title="npm test"></a>npm test</h3><p>執行一次測試程式，檢查程式是否有依照我們的SPEC規劃執行</p>
+<h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><p><strong> React - Review Day02 - Redux - PART1 </strong></p>
+<p>光建立Redux可能就會消耗掉好幾篇的扣打了啊 </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 Tomas Lin
+  
+  <p>Theme by <a href="https://caisiduo.xyz" target="_blank">LightOne</a></p>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
