@@ -44,7 +44,246 @@
 </header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="react">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-10T10:42:09.000Z"><a href="/2016/12/10/ReactReviewDay04/">2016-12-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/10/ReactReviewDay04/">ReactReviewDay04</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-10T08:37:59.000Z"><a href="/2016/12/10/ReactReviewDay03/">2016-12-10</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/10/ReactReviewDay03/">ReactReviewDay03</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="React-回憶錄-PartIII"><a href="#React-回憶錄-PartIII" class="headerlink" title="React 回憶錄 PartIII"></a>React 回憶錄 PartIII</h1><h2 id="About-Flux-and-Redux"><a href="#About-Flux-and-Redux" class="headerlink" title="About Flux and Redux"></a>About Flux and Redux</h2><p>這兩種都是各自不同的Design Pattern</p>
+<p>這次要介紹的是Redux</p>
+<p>基本上Redux分為幾個大部分</p>
+<ul>
+<li><p>Action - 行為</p>
+</li>
+<li><p>View</p>
+<ul>
+<li><p>Container - 每個 Container都是各自獨立的一個頁面</p>
+</li>
+<li><p>Component - 某個頁面切割得較小元件</p>
+</li>
+<li><p>CSS </p>
+</li>
+</ul>
+</li>
+<li><p>Store - (多個Reducer組成)</p>
+<ul>
+<li>Client 的 Cache</li>
+</ul>
+</li>
+</ul>
+<p>以下會以簡單的會員系統作為範例</p>
+<p>此次範例已輸入帳號密碼為例</p>
+<h2 id="任務切割"><a href="#任務切割" class="headerlink" title="任務切割"></a>任務切割</h2><p>通常我們收到一個功能要切割成一個個TodoList</p>
+<p>方便在寫程式的時候有更具體的目標</p>
+<p>並且在對程式架構上有較清楚的分配</p>
+<p>此篇功能只會介紹任務分配與切割</p>
+<p>其餘會在後續篇幅慢慢聊到</p>
+<h3 id="登入功能"><a href="#登入功能" class="headerlink" title="登入功能"></a>登入功能</h3><ul>
+<li><p>會員登入</p>
+<ul>
+<li><p>會員登入的Button- View</p>
+</li>
+<li><p>發送Request - Action</p>
+<ul>
+<li>User 輸入 帳號與密碼</li>
+</ul>
+</li>
+<li><p>登入成功 - Store</p>
+<ul>
+<li><p>使用者資訊存放</p>
+</li>
+<li><p>跳轉到首頁</p>
+</li>
+</ul>
+</li>
+<li><p>登入失敗顯示錯誤訊息 - Store</p>
+<ul>
+<li>顯示錯誤訊息</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>後端會介接Facebook 的會員系統</strong></p>
+<p>大致上功能會發現有幾個動作</p>
+<p>一個是發送Request</p>
+<p>一個是收到Response會處理Success, Error</p>
+<p>那麼在攥寫的時候</p>
+<p>若是有重複的程式碼</p>
+<p>便可以整理出來寫成一個Function</p>
+<p>避免相同的程式碼重複</p>
+<p>例如Request與Server溝通這是一定會常常使用到的</p>
+<p>那麼就可以將他整理出來一個Function</p>
+<p>提供測試與之後使用</p>
+<p>但是因為我們是使用react-facebook-login這個套件</p>
+<p>這個行為該套件已經幫我們完成了</p>
+<p>所以可以等到之後再來介紹</p>
+<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p>以上述功能會需要兩個View</p>
+<p>一個是登入頁面</p>
+<p>一個是已經登入成功頁面</p>
+<p>我們在之前建立的HomeScene可以設定為登入成功後的頁面</p>
+<p>所以我們需要另外一個登入頁面</p>
+<h3 id="Create-LoginScene"><a href="#Create-LoginScene" class="headerlink" title="Create LoginScene"></a>Create LoginScene</h3><p>既然我們要使用Facebook 登入</p>
+<p>那我們到<a href="https://js.coach/" target="_blank" rel="external">jsCoach</a>那邊搜尋一下</p>
+<p>是否有值得信賴的套件可供使用</p>
+<p>而我找到了<a href="https://github.com/keppelen/react-facebook-login" target="_blank" rel="external">react-facebook-login</a></p>
+<p>目前有 <strong>一百多顆星</strong> 而且上個月總共有 <strong>八萬四千多次</strong> 的下載量</p>
+<p>看起來很值得信賴</p>
+<p><img src="https://4.bp.blogspot.com/-wEaSlkeg9Mg/VGGGAgvtVjI/AAAAAAAAVYA/YgMVj0ZE4x8/s1024/" width="300" height="200"></p>
+<h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install react-facebook-login --save</div></pre></td></tr></table></figure>
+<p><a href="https://www.google.com.tw/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=facebook%20developer%20appid%20%E7%94%B3%E8%AB%8B" target="_blank" rel="external">關於申請Facebook APP ID</a></p>
+<p>containers/LoginScene/index.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> FacebookLogin <span class="keyword">from</span> <span class="string">'react-facebook-login'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginScene</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">this</span>.getResponse = <span class="keyword">this</span></div><div class="line">      .getResponse</div><div class="line">      .bind(<span class="keyword">this</span>);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'LoginView'</span>);</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;FacebookLogin</div><div class="line">          appId="462242820647777"</div><div class="line">          autoLoad=&#123;true&#125;</div><div class="line">          fields="name,email,picture,about"</div><div class="line">          callback=&#123;this.getResponse&#125;</div><div class="line">          cssClass="my-facebook-button-class"</div><div class="line">          icon="fa-facebook"/&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  getResponse(response) &#123;</div><div class="line">    if (response.error) &#123;</div><div class="line">      alert('登入失敗')</div><div class="line">    &#125; else &#123;</div><div class="line">      this</div><div class="line">        .props</div><div class="line">        .loginSuccess();</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我們設定好appId之後</p>
+<p>指定他收到Response的Function</p>
+<p>App.js修改為</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> LoginScene <span class="keyword">from</span> <span class="string">'./containers/LoginScene'</span>;</div><div class="line"><span class="keyword">import</span> HomeScene <span class="keyword">from</span> <span class="string">'./containers/HomeScene'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">      <span class="attr">auth</span>: <span class="literal">false</span></div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">let</span> component = <span class="literal">null</span>;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.state.auth) &#123;</div><div class="line">      component = &lt;HomeScene/&gt;;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      component = &lt;LoginScene loginSuccess=&#123;() =&gt; this.setState(&#123;auth: true&#125;)&#125;/&gt;;</div><div class="line">    &#125;</div><div class="line">    return (</div><div class="line">      &lt;div&gt;&#123;component&#125;&lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">export default App;</div></pre></td></tr></table></figure>
+<p>重新啟動後會看到下列畫面</p>
+<p><img src="/2016/12/10/ReactReviewDay03/fbLogin.png" alt="Facebooklogin" width="300" height="200"></p>
+<p>會看到Console有一個LoginView</p>
+<p>代表他有Render出LoginScene</p>
+<p>但是因為會自動檢查登入狀態</p>
+<p>登入成功後轉到HomeScene</p>
+<p>這個動作太快</p>
+<p>可能不是那麼容易感覺得到</p>
+<p>但是這樣似乎並不是我們想要的</p>
+<p>因為如果我們有更多的頁面</p>
+<p>屆時頁面管理難度會暴增</p>
+<p>所以我們需要一個專門處理頁面之間關係的Route System</p>
+<p>下一篇幅會再來介紹React Route System</p>
+<p>謝謝</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-09T03:54:17.000Z"><a href="/2016/12/09/ReactReviewDay02/">2016-12-09</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/09/ReactReviewDay02/">ReactReviewDay02</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="React-回憶錄-PartII"><a href="#React-回憶錄-PartII" class="headerlink" title="React 回憶錄 PartII"></a>React 回憶錄 PartII</h1><p>本來今天應該要開始準備Redux的建置</p>
+<p>不過後來想想</p>
+<p>還是先解決CSS的問題</p>
+<h2 id="建立Redux的基本資料夾"><a href="#建立Redux的基本資料夾" class="headerlink" title="建立Redux的基本資料夾"></a>建立Redux的基本資料夾</h2><p>雖然這次還沒要開始加入Redux</p>
+<p>基本上一些資料夾已經可以事先建立</p>
+<p>建立完成後如下</p>
+<p><strong>src/</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── App.css</div><div class="line">├── App.js</div><div class="line">├── App.test.js</div><div class="line">├── actions</div><div class="line">├── components</div><div class="line">├── containers</div><div class="line">├── index.css</div><div class="line">├── index.js</div><div class="line">├── logo.svg</div><div class="line">├── reducers</div><div class="line">├── routes</div><div class="line">├── store</div><div class="line">└── utils</div></pre></td></tr></table></figure>
+<h2 id="整理程式碼"><a href="#整理程式碼" class="headerlink" title="整理程式碼"></a>整理程式碼</h2><p>在Containers 中建立一個資料夾 HomeScene</p>
+<p>在<code>containers/HomeScene/index.js</code> 增加如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> logo <span class="keyword">from</span> <span class="string">'./logo.svg'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'./styles.css'</span>;</div><div class="line"></div><div class="line">    <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeScene</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">      render() &#123;</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">          &lt;div className="App"&gt;</div><div class="line">            &lt;div className="App-header"&gt;</div><div class="line">              &lt;img src=&#123;logo&#125; className="App-logo" alt="logo"/&gt;</div><div class="line">              &lt;h2&gt;Welcome to React&lt;/h2&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">            &lt;p className="App-intro"&gt;</div><div class="line">              To get started, edit</div><div class="line">              &lt;code&gt;src/App.js&lt;/code&gt;</div><div class="line">              and save to reload.</div><div class="line">            &lt;/p&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">        );</div><div class="line">      &#125;</div></pre></td></tr></table></figure>
+<p>將 <code>App.js</code> 修改為</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> HomeScene <span class="keyword">from</span> <span class="string">'./containers/HomeScene'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (&lt;HomeScene/&gt;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  export default App;</p>
+<p>將<code>App.css</code> 移動到 <code>containers/HomeScene</code> 並重新命名為 <code>styles.css</code></p>
+<p> 再把logo.svg 移動到 <code>containers/HomeScene</code></p>
+<h2 id="Why"><a href="#Why" class="headerlink" title="Why??"></a>Why??</h2><p>每個Container我皆視為一整個頁面</p>
+<p>所以在命名為HomeScene</p>
+<p>而將所有使用到的CSS皆放置在同樣的一個頁面</p>
+<p>在各自的Module引用</p>
+<p>在編譯後</p>
+<p>會將CSS整理到Header 中的 Style Tag中</p>
+<p><img src="/2016/12/09/ReactReviewDay02/styleheader.png" alt="Image"></p>
+<p>但是如果在Components中增加一個Module</p>
+<p>也 <code>import &quot;styles.css&quot;</code>的時候</p>
+<p>header 會另外增加一個style的tag</p>
+<p>我增加了一個 <code>components/text.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'./styles.css'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Text</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;p&gt;test&lt;/p&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>containers/HomeScene/index.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> logo <span class="keyword">from</span> <span class="string">'./logo.svg'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'./styles.css'</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> Text <span class="keyword">from</span> <span class="string">'../../components/test'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">HomeScene</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div className="App"&gt;</div><div class="line">        &lt;Text/&gt;</div><div class="line">        &lt;div className="App-header"&gt;</div><div class="line">          &lt;img src=&#123;logo&#125; className="App-logo" alt="logo"/&gt;</div><div class="line">          &lt;h2&gt;Welcome to React&lt;/h2&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;p className="App-intro"&gt;</div><div class="line">          To get started, edit</div><div class="line">          &lt;code&gt;src/App.js&lt;/code&gt;</div><div class="line">          and save to reload.</div><div class="line">        &lt;/p&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如下圖</p>
+<p><img src="/2016/12/09/ReactReviewDay02/styleheader2.png" alt="Image"></p>
+<p>它會在header增加一個 style tags</p>
+<p>並且在components中的<code>styles.css</code></p>
+<p>因為也包含了一個.App的class</p>
+<p>他會將原本的.APP覆蓋過去</p>
+<p>導致Background Color被修改為綠色</p>
+<p>這也是在使用這需要注意的地方</p>
+<p>明天會開始談Redux的Actions與Store</p>
+<p>謝謝</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
   
   <div class="post-content">
     <header>
