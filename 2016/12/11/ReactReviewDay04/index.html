@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ReactReviewDay04 | Tomas Blog</title>
+  <meta name="author" content="Tomas Lin">
+  
+  <meta name="description" content="React 回憶錄 - Day4Route System簡介傳統的Route System 是在瀏覽器打開之後
+向Server索取資訊
+此時Client端會鎖死等待(Block)
+Server 會在Database下相對的 Query 取得Data之後
+透過(ejs, jade…..)將Data整理">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="ReactReviewDay04"/>
+  <meta property="og:site_name" content="Tomas Blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Tomas Blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Tomas Blog</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-12-11T13:27:00.000Z"><a href="/2016/12/11/ReactReviewDay04/">2016-12-11</a></time>
+      
+      
+  
+    <h1 class="title">ReactReviewDay04</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="React-回憶錄-Day4"><a href="#React-回憶錄-Day4" class="headerlink" title="React 回憶錄 - Day4"></a>React 回憶錄 - Day4</h1><h2 id="Route-System"><a href="#Route-System" class="headerlink" title="Route System"></a>Route System</h2><h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>傳統的Route System 是在瀏覽器打開之後</p>
+<p>向Server索取資訊</p>
+<p>此時Client端會鎖死等待(<code>Block</code>)</p>
+<p>Server 會在Database下相對的 Query 取得Data之後</p>
+<p>透過(ejs, jade…..)將Data整理成一份HTML</p>
+<p>將此HTML透過Response 發送給瀏覽器去顯示</p>
+<h3 id="Single-Page-Application"><a href="#Single-Page-Application" class="headerlink" title="Single Page Application"></a>Single Page Application</h3><p>然而 <strong>SPA</strong> 的出現 迫使了前端也需要有一個Route System</p>
+<p>來定義 Route 與頁面之間的關係</p>
+<p>React因為也已經把ejs, jade 這類的Template的工作都完成了</p>
+<p>後端只需要提供 API 讓前端可以有接口可以取得相對應的資訊</p>
+<p>不但讓前後端的工作分離</p>
+<p>僅僅藉由 API 這個溝通橋樑</p>
+<p>使用通用的資料型態(XML, Json)做資訊交換</p>
+<h2 id="實際使用"><a href="#實際使用" class="headerlink" title="實際使用"></a>實際使用</h2><p>src/reducers/index.js </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;&#125;;</div></pre></td></tr></table></figure>
+<p>由於在Provider 中需要傳入一個store</p>
+<p>所以先準備一個空的 reducers</p>
+<p>src/App.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;createStore, combineReducers&#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"><span class="keyword">import</span> &#123;Provider&#125; <span class="keyword">from</span> <span class="string">'react-redux'</span>;</div><div class="line"><span class="keyword">import</span> &#123;Router, Route, browserHistory&#125; <span class="keyword">from</span> <span class="string">'react-router'</span>;</div><div class="line"><span class="keyword">import</span> &#123;syncHistoryWithStore, routerReducer&#125; <span class="keyword">from</span> <span class="string">'react-router-redux'</span>;</div><div class="line"></div><div class="line"><span class="keyword">import</span> reducers <span class="keyword">from</span> <span class="string">'./reducers'</span>;</div><div class="line"><span class="keyword">import</span> LoginScene <span class="keyword">from</span> <span class="string">'./containers/LoginScene'</span>;</div><div class="line"><span class="keyword">import</span> HomeScene <span class="keyword">from</span> <span class="string">'./containers/HomeScene'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> store = createStore(combineReducers(&#123;</div><div class="line">  ...reducers,</div><div class="line">  <span class="attr">routing</span>: routerReducer</div><div class="line">&#125;))</div><div class="line"></div><div class="line"><span class="comment">// Create an enhanced history that syncs navigation events with the store</span></div><div class="line"><span class="keyword">const</span> history = syncHistoryWithStore(browserHistory, store)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">      <span class="attr">auth</span>: <span class="literal">false</span></div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">        &lt;Router history=&#123;history&#125;&gt;</div><div class="line">          &lt;Route path="/" component=&#123;LoginScene&#125;&gt;&lt;/Route&gt;</div><div class="line">          &lt;Route path="/home" component=&#123;HomeScene&#125;&gt;&lt;/Route&gt;</div><div class="line">        &lt;/Router&gt;</div><div class="line">      &lt;/Provider&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
+<h3 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h3><p>因為在每個 <strong>container</strong> 中 需要利用 connect 來綁定 Store</p>
+<p>所以需要 Provider 這個 wrapper</p>
+<h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><p>react-router 提供三個history lib使用</p>
+<h4 id="hashHistory"><a href="#hashHistory" class="headerlink" title="hashHistory"></a>hashHistory</h4><p>最簡單的history lib 若只是Example 可以安心的使用，但是若是真的要架設一個真實的web 產品</p>
+<p>建議使用browserHistory</p>
+<h4 id="browserHistory"><a href="#browserHistory" class="headerlink" title="browserHistory"></a>browserHistory</h4><p>一般 Web APP 使用的history lib</p>
+<h3 id="createMemoryHistroy"><a href="#createMemoryHistroy" class="headerlink" title="createMemoryHistroy"></a>createMemoryHistroy</h3><p>有可能會使用在測試環境的 lib</p>
+<h4 id="routerReducer"><a href="#routerReducer" class="headerlink" title="routerReducer"></a>routerReducer</h4><p>在每一個container中</p>
+<p>有時候我們需要知道目前的 Route 相關資訊</p>
+<p>最方便的就是可以讓 route 直接在 store 中同步</p>
+<p>這個Method協助我們完成這件事情</p>
+<p>另外也有 提供 middleware 完成相同的事情</p>
+<p><a href="https://github.com/reactjs/react-router-redux#what-if-i-want-to-issue-navigation-events-via-redux-actions" target="_blank" rel="external">routerMiddleware</a></p>
+<p>他也有提供 <code>push</code>, <code>replace</code>, <code>go</code>, <code>goBack</code> 四種Function</p>
+<p>來讓你做Navigator的控制</p>
+<p>但是前提是你需要先使用 <code>routerMiddleware</code></p>
+<p>我目前先選用routerReducer</p>
+<p>有空再來測試這四種Method</p>
+<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><p>/</p>
+<p><img src="/2016/12/10/ReactReviewDay04/loginScene.png" alt="Login Scene" width="300" height="200"></p>
+<p>/home</p>
+<p><img src="/2016/12/10/ReactReviewDay03/homeScene.png" alt="Home Scene" width="300" height="200"></p>
+<h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><p>React 回憶錄 -Actions</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://blog.tomaslin.com.tw/2016/12/11/ReactReviewDay04/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 Tomas Lin
+  
+  <p>Theme by <a href="https://caisiduo.xyz" target="_blank">LightOne</a></p>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
