@@ -50,6 +50,70 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-12-16T10:31:57.000Z"><a href="/2016/12/16/Cday01/">2016-12-16</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/16/Cday01/">Cday01</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="gcc-的參數使用"><a href="#gcc-的參數使用" class="headerlink" title="gcc 的參數使用"></a>gcc 的參數使用</h1><h2 id="Basic-Usage"><a href="#Basic-Usage" class="headerlink" title="Basic Usage"></a>Basic Usage</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gcc helloworld.c -o helloworld.o</div></pre></td></tr></table></figure>
+<p>helloworld.c 是編譯前的原始檔</p>
+<p>helloworld.o 是編譯後的執行醠</p>
+<p>-o 是 output 的意思</p>
+<p><code>No Message is a good message.</code></p>
+<p>若無錯誤訊息則會產生一個helloworld.o</p>
+<p>執行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">./helloworld.c</div><div class="line"></div><div class="line">//Output: Hello World</div></pre></td></tr></table></figure>
+<h3 id="若是你想了解編譯的過程則可以"><a href="#若是你想了解編譯的過程則可以" class="headerlink" title="若是你想了解編譯的過程則可以"></a>若是你想了解編譯的過程則可以</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gcc -S helloworld.c</div></pre></td></tr></table></figure>
+<p>此參數會產生一個helloworld.S</p>
+<p>裡面則會記錄變異過程的Log</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">	.section	__TEXT,__text,regular,pure_instructions</div><div class="line">	.macosx_version_min 10, 12</div><div class="line">	.globl	_main</div><div class="line">	.align	4, 0x90</div><div class="line">_main:                                  ## @main</div><div class="line">	.cfi_startproc</div><div class="line">## BB#0:</div><div class="line">	pushq	%rbp</div><div class="line">Ltmp0:</div><div class="line">	.cfi_def_cfa_offset 16</div><div class="line">Ltmp1:</div><div class="line">	.cfi_offset %rbp, -16</div><div class="line">	movq	%rsp, %rbp</div><div class="line">Ltmp2:</div><div class="line">	.cfi_def_cfa_register %rbp</div><div class="line">	subq	$16, %rsp</div><div class="line">	leaq	L_.str(%rip), %rdi</div><div class="line">	movl	$0, -4(%rbp)</div><div class="line">	movb	$0, %al</div><div class="line">	callq	_printf</div><div class="line">	xorl	%ecx, %ecx</div><div class="line">	movl	%eax, -8(%rbp)          ## 4-byte Spill</div><div class="line">	movl	%ecx, %eax</div><div class="line">	addq	$16, %rsp</div><div class="line">	popq	%rbp</div><div class="line">	retq</div><div class="line">	.cfi_endproc</div><div class="line"></div><div class="line">	.section	__TEXT,__cstring,cstring_literals</div><div class="line">L_.str:                                 ## @.str</div><div class="line">	.asciz	&quot;Hello, World!&quot;</div><div class="line"></div><div class="line"></div><div class="line">.subsections_via_symbols</div></pre></td></tr></table></figure>
+<h3 id="build"><a href="#build" class="headerlink" title="build"></a>build</h3><p>每次寫完程式之後都要開啟Terminal去執行指令</p>
+<p>感覺就很麻煩</p>
+<p>所以我們安裝一下 <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank" rel="external">Code Runner</a></p>
+<p>再修改setting.json 增加下列的值</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">"code-runner.executorMap"</span>:&#123;</div><div class="line">    <span class="attr">"javascript"</span>: <span class="string">"node"</span>,</div><div class="line">    <span class="attr">"c"</span>: <span class="string">"gcc $fullFileName -o $dir/$fileNameWithoutExt &amp;&amp; $dir/$fileNameWithoutExt"</span></div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>設定完成之後</p>
+<p>day01/example.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"> <span class="built_in">printf</span>(<span class="string">"Hello, World!"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li><code>F1</code> 打開指令輸入匡</li>
+</ol>
+<p><img src="/2016/12/16/CProgramngDay01/command.png" alt="Image"></p>
+<ol>
+<li><code>Run Code</code> </li>
+</ol>
+<p>執行結果</p>
+<p><img src="/2016/12/16/CProgramngDay01/result.png" alt="Image"></p>
+<p>這樣就可以基本的build出一個執行檔</p>
+<p>並且秀出執行結果</p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="http://cseweb.ucsd.edu/classes/fa09/cse141/tutorial_gcc_gdb.html" target="_blank" rel="external">Tutorial of gcc and gdb</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-12-14T08:28:26.000Z"><a href="/2016/12/14/ReactReviewDay05/">2016-12-14</a></time>
       
       
