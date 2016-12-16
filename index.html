@@ -50,6 +50,64 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2016-12-14T08:28:26.000Z"><a href="/2016/12/14/ReactReviewDay05/">2016-12-14</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/12/14/ReactReviewDay05/">ReactReviewDay05</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="React-回憶錄-Day5"><a href="#React-回憶錄-Day5" class="headerlink" title="React 回憶錄 - Day5"></a>React 回憶錄 - Day5</h1><h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><p>View, Action, Store在React 中分別扮演不同的角色</p>
+<p>View 負責畫面的美化與特效</p>
+<p>Action 負責通知Store 通知前端有了行為</p>
+<p>並修改相對應的Data</p>
+<p>Store 負責儲存需要的資訊</p>
+<p>而依據架構而言</p>
+<p>Action 是唯一可以修改 Store 的方式</p>
+<p>Action 是唯一可以修改 Store 的方式</p>
+<p>Action 是唯一可以修改 Store 的方式</p>
+<p>很重要所以要說三次</p>
+<p>不一定每一個行為都需要發送Action</p>
+<p>但是若這個行為需要修改 Store</p>
+<p>則可以發 Action 修改 Store</p>
+<h2 id="修改步驟"><a href="#修改步驟" class="headerlink" title="修改步驟"></a>修改步驟</h2><p>在宣告 Action 的時候</p>
+<p> 首先要先定義每個 Action 的 Type</p>
+<p> 依據此Type 和 Store 的 Method 做 Mapping</p>
+<p>所以這個 Type 是常數， 不會修改</p>
+<p>src/constanst/ActionTypes.js</p>
+<pre><code class="javascript"><span class="keyword">import</span> constants <span class="keyword">from</span> <span class="string">'flux-constants'</span>;
+
+<span class="keyword">export</span> <span class="keyword">default</span> constants([
+  <span class="string">'LOGIN_REQUEST'</span>,
+  <span class="string">'LOGIN_SUCCESS'</span>,
+  <span class="string">'LOGIN_ERROR'</span>
+]);
+</code></pre>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2016-12-11T13:27:00.000Z"><a href="/2016/12/11/ReactReviewDay04/">2016-12-11</a></time>
       
       
