@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>NodeDesignPatten-01 › Tomas&#39;s Blog&#39;</title>
+  <meta name="author" content="Tomas Lin">
+  
+  <meta name="description" content="Welcome to the Node.js PlatformSmall modules* NPM
+    * 提供一個共同的Module 下載平台
+    * 分享彼此的模組，節省時間
+    * DRY(Don&amp;apos;t Reapt yourself)
+* 小型的模組
+    * 易於維護與">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="NodeDesignPatten-01"/>
+  <meta property="og:site_name" content="Tomas&#39;s Blog&#39;"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Tomas&#39;s Blog&#39;" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header"><div class="meta inner">
+  <h1><a href="/">Tomas&#39;s Blog&#39;</a></h1>
+  <h2><a href="/"></a></h2>
+  <nav id="main-nav">
+    <ul>
+      
+      <li><a href="/about">About</a></li>
+      
+      <li><a href="/archives">Archives</a></li>
+      
+      <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+</div>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">NodeDesignPatten-01</h1>
+  
+
+      
+        <time datetime="2017-04-29T07:18:12.000Z">2017-04-29</time>
+      
+    </header>
+    <div class="entry">
+      
+        <h1 id="Welcome-to-the-Node-js-Platform"><a href="#Welcome-to-the-Node-js-Platform" class="headerlink" title="Welcome to the Node.js Platform"></a>Welcome to the Node.js Platform</h1><h2 id="Small-modules"><a href="#Small-modules" class="headerlink" title="Small modules"></a>Small modules</h2><pre><code>* NPM
+    * 提供一個共同的Module 下載平台
+    * 分享彼此的模組，節省時間
+    * DRY(Don&apos;t Reapt yourself)
+* 小型的模組
+    * 易於維護與測試
+    * 做好一件事情就好
+    * 避免使用Global變數造成套件之間衝突
+    * 容易被理解
+* package.json
+    * 解決依賴性地獄的問題
+    * 版本控制
+</code></pre><h2 id="Introduction-to-Node-js-6-and-ES2015"><a href="#Introduction-to-Node-js-6-and-ES2015" class="headerlink" title="Introduction to Node.js 6 and ES2015"></a>Introduction to Node.js 6 and ES2015</h2><p><a href="https://kangax.github.io/compat-table/es6/" target="_blank" rel="external">ES6 瀏覽器支援現況</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">strict mode is enbend</div></pre></td></tr></table></figure>
+<p><a href="https://www.google.com/search?q=javascript+strict+mode&amp;ie=utf-8&amp;oe=utf-8" target="_blank" rel="external">strict mode</a></p>
+<h3 id="The-arrow-function"><a href="#The-arrow-function" class="headerlink" title="The arrow function"></a>The arrow function</h3><p><a href="https://babeljs.io/repl/#?babili=false&amp;evaluate=true&amp;lineWrap=false&amp;presets=es2015%2Creact%2Cstage-2&amp;targets=&amp;browsers=&amp;builtIns=false&amp;code=" target="_blank" rel="external">try it out</a></p>
+<h3 id="Class-syntax"><a href="#Class-syntax" class="headerlink" title="Class syntax"></a>Class syntax</h3><ul>
+<li>ES5 沒有 Class</li>
+</ul>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype" target="_blank" rel="external">ES5 prototype</a></p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/call" target="_blank" rel="external">ES5 prototype.call</a></p>
+<ul>
+<li>constructor</li>
+<li>super</li>
+</ul>
+<h3 id="Enhanced-object-literals"><a href="#Enhanced-object-literals" class="headerlink" title="Enhanced object literals"></a>Enhanced object literals</h3><p><strong>object</strong></p>
+<ul>
+<li>object - 沒有順序的集合</li>
+<li>key - 為英文或數字_ 的集合</li>
+<li>value - 可以是任何類型的變數(string, number, boolean…)</li>
+</ul>
+<p><strong>array</strong></p>
+<ul>
+<li>array - 有順序的集合</li>
+<li>key - 從0 開始依序往上遞增</li>
+<li>value - 可以是任何類型的變數(string, number, boolean…)</li>
+</ul>
+<p><strong>seter and geter</strong></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get" target="_blank" rel="external">Getter</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set" target="_blank" rel="external">Setter</a></p>
+<h3 id="Map-and-Set-collections"><a href="#Map-and-Set-collections" class="headerlink" title="Map and Set collections"></a>Map and Set collections</h3><p><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank" rel="external">Map</a></p>
+<p><a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Set" target="_blank" rel="external">Set</a></p>
+<ul>
+<li>key 與 value的配對</li>
+<li>當key刪除的時候，記憶體會自動被Realse?</li>
+</ul>
+<h3 id="WeakMap-and-WeakSet-collections"><a href="#WeakMap-and-WeakSet-collections" class="headerlink" title="WeakMap and WeakSet collections"></a>WeakMap and WeakSet collections</h3><p><a href="http://stackoverflow.com/questions/29413222/what-are-the-actual-uses-of-es6-weakmap" target="_blank" rel="external">startwordflow 討論 weakmap</a></p>
+<h3 id="Template-literals"><a href="#Template-literals" class="headerlink" title="Template literals"></a>Template literals</h3><p>字串組合方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var lastname = &apos;Tomas&apos;;</div><div class="line">var firstname = &apos;Lin&apos;;</div><div class="line">var fullname = firstname +&apos; &apos; +  lastname;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var lastname = &apos;Tomas&apos;;</div><div class="line">var firstname = &apos;Lin&apos;;</div><div class="line">var fullname = `$&#123;firstname&#125; $&#123;lastname&#125;`;</div></pre></td></tr></table></figure>
+      
+    </div>
+      
+      <footer>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Nodejs/">Nodejs</a>, <a href="/tags/DesignPatten/">DesignPatten</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/05/03/Leetcode-Q1/">Leetcode-Q1</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/29/NodeDesignPatten-01/">NodeDesignPatten-01</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/22/promise/">Promise 的那些事</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/DesignPatten/" style="font-size: 10px;">DesignPatten</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2017 Tomas Lin
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+</body>
+</html>
+

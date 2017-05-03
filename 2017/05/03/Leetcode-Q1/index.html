@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Leetcode-Q1 › Tomas&#39;s Blog&#39;</title>
+  <meta name="author" content="Tomas Lin">
+  
+  <meta name="description" content="Convert BST to Greater TreeDescriptionGiven a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is change">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Leetcode-Q1"/>
+  <meta property="og:site_name" content="Tomas&#39;s Blog&#39;"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Tomas&#39;s Blog&#39;" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header"><div class="meta inner">
+  <h1><a href="/">Tomas&#39;s Blog&#39;</a></h1>
+  <h2><a href="/"></a></h2>
+  <nav id="main-nav">
+    <ul>
+      
+      <li><a href="/about">About</a></li>
+      
+      <li><a href="/archives">Archives</a></li>
+      
+      <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+</div>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">Leetcode-Q1</h1>
+  
+
+      
+        <time datetime="2017-05-03T13:24:46.000Z">2017-05-03</time>
+      
+    </header>
+    <div class="entry">
+      
+        <h1 id="Convert-BST-to-Greater-Tree"><a href="#Convert-BST-to-Greater-Tree" class="headerlink" title="Convert BST to Greater Tree"></a>Convert BST to Greater Tree</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">輸入一個Binary Search Tree(BST), 將每一個節點得值更改為原始的值加上加上大於BST中 Node 的值的總和</div></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Input: The root of a Binary Search Tree like this:</div><div class="line">              5</div><div class="line">            /   \</div><div class="line">           2     13</div><div class="line"></div><div class="line">Output: The root of a Greater Tree like this:</div><div class="line">             18</div><div class="line">            /   \</div><div class="line">          20     13</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">var</span> convertBST = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> vals = [];</div><div class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">visit1</span>(<span class="params">root</span>)</span>&#123;</div><div class="line">      <span class="keyword">if</span>(root)&#123;</div><div class="line">          visit1(root.left);</div><div class="line">          vals.push(root.val);</div><div class="line">          visit1(root.right);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  visit1(root);</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">visit2</span>(<span class="params">root</span>)</span>&#123;</div><div class="line">      <span class="keyword">if</span>(root)&#123;</div><div class="line">          visit2(root.right);</div><div class="line">          count += vals.pop();</div><div class="line">          root.val = count;</div><div class="line">          visit2(root.left);</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  visit2(root);</div><div class="line">  <span class="keyword">return</span> root;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>visit1: 利用遞迴將 Node 往下延伸到最左邊子元素的時候依序push 到陣列中</p>
+<p>visit2: 利用遞迴將 Node 往下延伸到最右邊的子元素依序將 value 修改為加總得值</p>
+<p>利用二元樹的特性來做輪巡並修改值</p>
+
+      
+    </div>
+      
+      <footer>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Javascript/">Javascript</a>, <a href="/tags/Leetcode/">Leetcode</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/05/03/Leetcode-Q1/">Leetcode-Q1</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/29/NodeDesignPatten-01/">NodeDesignPatten-01</a>
+      </li>
+    
+      <li>
+        <a href="/2017/04/22/promise/">Promise 的那些事</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">Tag Cloud</h3>
+  <div class="entry">
+    <a href="/tags/DesignPatten/" style="font-size: 10px;">DesignPatten</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2017 Tomas Lin
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+</body>
+</html>
+
