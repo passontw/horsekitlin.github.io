@@ -4,7 +4,7 @@ date: 2017-05-07 20:43:56
 tags: [Javascript, Leetcode]
 ---
 
-# Palindrome Number
+# 9 Palindrome Number
 
 ## 迴文數
 

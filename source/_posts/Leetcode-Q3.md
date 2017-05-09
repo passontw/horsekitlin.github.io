@@ -4,7 +4,7 @@ date: 2017-05-06 18:03:56
 tags: [Javascript, Leetcode]
 ---
 
-# Reverse Integer
+# 7 Reverse Integer
 
 ## Example
 

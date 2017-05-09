@@ -4,7 +4,7 @@ date: 2017-05-05 00:12:49
 tags: [Javascript, Leetcode]
 ---
 
-# Two sum
+# 1 Two sum
 
 ## First solution
 
