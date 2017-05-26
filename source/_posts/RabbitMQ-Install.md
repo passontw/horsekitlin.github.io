@@ -1,7 +1,9 @@
 ---
 title: RabbitMQ-Install
 date: 2017-05-22 15:05:41
-tags: [MessageQueue]
+tags: 
+  - MessageQueue
+  - Nodejs
 ---
 
 # Rabbit Message Queue
