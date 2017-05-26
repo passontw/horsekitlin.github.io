@@ -4,9 +4,5 @@ db.json
 *.log
 node_modules/
 public/
-<<<<<<< HEAD
 .deploy*/
 node_modules
-=======
-.deploy*/
->>>>>>> 394d3e1d306ba9d945499a37b3f672c229134570
