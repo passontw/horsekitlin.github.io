@@ -2,6 +2,7 @@
 title: Leetcode-Q3
 date: 2017-05-06 18:03:56
 tags: [Javascript, Leetcode]
+categories: Leetcode
 ---
 
 # 7 Reverse Integer

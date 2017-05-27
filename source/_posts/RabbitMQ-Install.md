@@ -4,6 +4,7 @@ date: 2017-05-22 15:05:41
 tags: 
   - MessageQueue
   - Nodejs
+  categories: RabbitMQ
 ---
 
 # Rabbit Message Queue

@@ -2,6 +2,7 @@
 title: Leetcode-Q1
 date: 2017-05-03 21:24:46
 tags: [Javascript, Leetcode]
+categories: Leetcode
 ---
 
 # 538 Convert BST to Greater Tree

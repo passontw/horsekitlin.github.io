@@ -2,6 +2,7 @@
 title: Leetcode-Q2
 date: 2017-05-05 00:12:49
 tags: [Javascript, Leetcode]
+categories: Leetcode
 ---
 
 # 1 Two sum

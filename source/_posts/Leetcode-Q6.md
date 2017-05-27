@@ -2,6 +2,7 @@
 title: Leetcode-Q6
 date: 2017-05-09 19:34:15
 tags: [Javascript, Leetcode]
+categories: Leetcode
 ---
 
 # 12 Integer to Roman

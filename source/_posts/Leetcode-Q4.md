@@ -2,6 +2,7 @@
 title: Leetcode-Q4
 date: 2017-05-07 20:43:56
 tags: [Javascript, Leetcode]
+categories: Leetcode
 ---
 
 # 9 Palindrome Number

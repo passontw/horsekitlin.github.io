@@ -4,6 +4,7 @@ tags:
   - Nodejs
   - DesignPatten
 date: 2017-04-29 15:18:12
+categories: Designpatten
 ---
 
 

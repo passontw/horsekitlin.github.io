@@ -2,6 +2,7 @@
 title: Leetcode-Q5
 date: 2017-05-09 18:12:27
 tags: [Javascript, Leetcode]
+categories: Leetcode
 ---
 
 # 561 Array Partition I
