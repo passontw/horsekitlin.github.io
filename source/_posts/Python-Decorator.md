@@ -26,7 +26,7 @@ def f(x):
 print f(2)
 ```
 
-在 ```logger``` 中定義一個 Function ```with_logging```
+在  ```logger``` 中定義一個 Function ```with_logging```
 
 在執行前 ```f``` 會被當成參數 ```func``` 傳入 ```logged```中
 
