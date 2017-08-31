@@ -152,7 +152,7 @@ ch.consume(q, function(msg) {
 
 ## Message durability
 
-我們已經學會瞭如何確保即使 worker 死亡
+我們已經學會瞭如何確保即使 worker Crash
 
 任務也不會丟失
 
@@ -164,9 +164,7 @@ ch.consume(q, function(msg) {
 
 它會忘記隊列和消息
 
-除非你不告訴它
-
-需要兩件事來確保消息不會丟失：我們需要將隊列和消息 durable 設定為 true
+需要兩件事來確保消息不會丟失：我們需要將 **Queue** 和消息 durable 設定為 true
 
 ```
 ch.assertQueue('hello', {durable: true});
@@ -178,7 +176,7 @@ ch.assertQueue('hello', {durable: true});
 
 這是因為我們已經定義了一個不耐用的名為 **hello** 的隊列。
 
-**RabbitMQ**不允許您重新定義具有不同參數的現有隊列
+**RabbitMQ** 不允許您重新定義具有不同參數的現有隊列
 
 並會向嘗試執行此操作的任何程序返回錯誤
 
@@ -189,6 +187,7 @@ ch.assertQueue('hello', {durable: true});
 ```
 ch.assertQueue('task_queue', {durable: true});
 ```
+
 這種持久的選項更改需要適用於 **new_task** 和 **worker**代碼。
 
 在這一點上 我們確信
@@ -209,7 +208,7 @@ ch.sendToQueue(q, new Buffer(msg), {persistent: true});
 
 將消息標記為持久性不能完全保證消息不會丟失
 
-雖然它告訴RabbitMQ將消息保存到磁盤
+雖然它告訴RabbitMQ將消息保存到硬碟
 
 但是當RabbitMQ接受消息並且還沒有保存時
 
@@ -226,6 +225,7 @@ RabbitMQ不會對每個消息執行fsync（2） - 它可能只是保存到緩存
 如果您需要更強大的保證
 
 那麼您可以使用發布商確認
+
 ```
 
 ### Fair dispatch
@@ -244,17 +244,15 @@ dispatching 仍然無法正常工作
 
 另一個**worker**幾乎不會做任何工作
 
-那麼 **RabbitMQ** 不知道什麼
-
-還會平均分配消息
+那麼 **RabbitMQ** 還會平均分配消息
 
 這是因為當消息進入隊列時
 
 **RabbitMQ**只會分派消息
 
-它不看 **sender**的未確認消息的數量
+它不看 **sender** 的未確認消息的數量
 
-它只是盲目地向第n個**sender**發送每個第n個消息。
+它只是盲目地向第n個 **sender** 發送每個第n個消息。
 
 ```
 ch.prefetch(1);
@@ -263,13 +261,14 @@ ch.prefetch(1);
 ```
 注意 Queue大小
 
-如果所有的**worker**都忙
+如果所有的 **worker** 都忙
 
 你的Queue可以填滿
 
 你會想要注意的是
 
 也許增加更多的 worker 或者有其他的策略
+
 ```
 
 ## Server

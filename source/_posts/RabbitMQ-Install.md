@@ -13,21 +13,21 @@ categories: RabbitMQ
 
 ### Step 1
 
-'''
+```
   $ brew update
-'''
+```
 
 ### Step 2
 
-'''
+```
   $ brew install rabbitmq
-'''
+```
 
 ### Step 3
 
-'''
+```
   $ rabbitmqctl status
-'''
+```
 
 ## Example
 
