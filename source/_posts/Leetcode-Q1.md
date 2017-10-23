@@ -1,7 +1,9 @@
 ---
 title: Leetcode-Q1
 date: 2017-05-03 21:24:46
-tags: [Javascript, Leetcode]
+tags:
+    - Javascript
+    - Leetcode
 categories: Leetcode
 ---
 
