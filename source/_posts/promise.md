@@ -1,6 +1,7 @@
 ---
 title: Promise 的那些事
 date: 2017-04-22 13:25:52
+categories: Javascript
 tags: 
   - Javascript
 ---

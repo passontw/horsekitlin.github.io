@@ -1,5 +1,6 @@
 ---
 title: Python-Decorator
+categories: Python
 tags:
   - Python
 date: 2017-06-10 16:58:58
