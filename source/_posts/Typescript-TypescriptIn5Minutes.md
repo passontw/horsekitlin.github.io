@@ -1,6 +1,6 @@
 ---
 title: TypeScript-TypeScriptIn5Minutes
-date: 2017-10-29 16:13:03
+date: 2017-10-27 16:13:03
 categories: Javascript
 tags:
   - Javascript
@@ -179,4 +179,4 @@ document.body.innerHTML = greeter(user);
 </html>
 ```
 
-然後使用瀏覽器開啟這個 HTML 檔案
+然後使用瀏覽器開啟這個 HTML 檔案 就可以看到相關的結果
