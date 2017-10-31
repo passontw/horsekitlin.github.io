@@ -8,6 +8,11 @@ tags:
   - Translate
 ---
 
+# 翻譯來源
+
+[Migrating from JavaScript
+](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
+
 # 從 Javascript 搬移你的程式到 TypeScript
 
 `TypeScript` 不會憑空存在， 他還是依存於 `Javascript` 的生態圈內，有很多舊的 `Javascript` 要轉譯為 `TypeScript` 過程中很無趣的。
