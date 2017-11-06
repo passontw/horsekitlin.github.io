@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Tomas's Blog'
-subtitle:
+title: 湯瑪士的部落格
+subtitle: 技術手扎！不定期更新
 description:
 author: Tomas Lin
 language: zh-tw
@@ -40,7 +40,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
 
 # Category & Tag
