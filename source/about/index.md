@@ -7,6 +7,28 @@ date: 2017-04-22 13:14:43
 
 ---
 
+### Front-end Developer
+
+#### Taiwin Integral Institute Co., Ltd.
+
+##### December 2015 – August 2017
+
+* Build a File control APP with React Native
+* Build an Email APP with React Native
+
+---
+
+### Back-end Developer
+
+#### EasyApp Integral Institute Co. Ltd.
+
+##### July 2014 – November 2015
+
+* Shoppingcar Web API with Express and MongoDB.
+* Admin System with React.
+
+---
+
 ### Software Enginner
 
 #### OSS Integral Institute Co. Ltd.
@@ -19,26 +41,6 @@ exam system
   * Convert pdf to epub3 and open it with node-webkit 
 
 ---
-
-### Back-end Developer
-
-#### EasyApp Integral Institute Co. Ltd.
-
-##### July 2014 – November 2015
-
-* Shoppingcar Web API with Nodejs and MongoDB.
-* Admin System with React.
-
----
-
-### Front-end Developer
-
-#### Taiwin Integral Institute Co., Ltd.
-
-##### December 2015 – August 2017
-
-* Build a File control APP with React Native
-* Build Email APP with React Native
 
 ## Education
 

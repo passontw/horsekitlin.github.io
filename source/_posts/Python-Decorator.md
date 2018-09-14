@@ -129,7 +129,7 @@ inside hello
 Exit hello
 hello worldfriends
 '''
-```
+
 比較一開始的函式例子跟後來的類別例子
 
 雖然識別字指的一個是類別

@@ -161,10 +161,3 @@ amqp.connect('amqp://localhost', function (err, conn) {
   });
 });
 ```
-
- ### 執行數個 Exchange
-
- ```js
- 
- ```
-
