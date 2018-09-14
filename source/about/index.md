@@ -6,6 +6,17 @@ date: 2017-04-22 13:14:43
 ## 工作經驗
 
 ---
+### Full-Stack Developer
+
+#### Adenovo Integral Institute Co., Ltd.
+
+* Build a web for app.imrenter.com
+* Build a admin for app.imrenter.com
+* Develop serverless API
+
+##### March 2018 – Now
+
+---
 
 ### Front-end Developer
 

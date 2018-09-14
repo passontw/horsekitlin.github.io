@@ -7,7 +7,7 @@ date: 2018-01-11 10:05:03
 categories:
 ---
 
-# React 與 React Nativee
+# React 與 React Native
 
 如果使用同一個架構的話 `React` 與 `React Native` 是大同小異的
 
