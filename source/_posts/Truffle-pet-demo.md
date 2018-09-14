@@ -2,7 +2,7 @@
 title: truffle pet demo
 tags:
   - Truffle
-  _ Sodility
+  - Sodility
 date: 2018-05-05 13:54:23
 categories: Block Chain
 ---
