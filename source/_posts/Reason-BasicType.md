@@ -22,7 +22,19 @@ date: 2018-10-03 16:21:38
 * 字元
 * Function
 
-## 變數宣告
+## Type
+
+`Type` 是 `Reason` 的亮點之一
+
+`let` 不一定需要宣告 類型
+
+```reason
+let score = 10;
+```
+
+Reason 知道 `score` 是個 `int` 型別，透過其值 `10` 判斷出來。這個稱之為 `推斷(inference)`
+
+## 變數宣告(Let binding)
 
 在介紹變數型態之前要先介紹一下如何宣告變數
 
@@ -246,6 +258,45 @@ Js.log(floatNumber); /* 0.1 */
 * int - 整數
 * float - 浮點數
 
+### 數字的相加
+
+```reason
+let addResult = 1 + 1;
+Js.log(addresult);/* 2 */
+
+let floatAddResult = 1.1 + 1.2; /* get compiler Error (WTF) */
+Js.log(floatAddResult);
+```
+
+Float 的相加要使用另外一個符號 `+.`
+
+```reason
+let addResult = 1 + 1;
+Js.log(addresult);/* 2 */
+
+let floatAddResult = 1.1 +. 1.2; /* 2.3 */
+Js.log(floatAddResult);
+```
+
+### int 與 float 的比大小
+
+因為 `Reason` 是強型別的語言
+
+```reason
+let twoBiggerThanOne = 2 > 1;
+Js.log(twoBiggerThanOne);
+```
+
+`int` 和 `float` 是不同的型別
+
+無法直接地做比較
+
+所以要先使用 `float_of_int` 將 `int` 轉成 `float`
+
+```reason
+float_of_int(2) > 1.2; /* true */
+```
+
 ## string
  
 `"` 使用雙引號宣告的為字串
@@ -283,7 +334,6 @@ Js.log(yourName); /* 哈囉世界! */
 
 `BuckleScript` 編譯前會先尋找 `js` 和 `j` 進行處理
 
-
 另外字串的相加使用 `++`
 
 ```reason
@@ -293,4 +343,3 @@ Js.log(hello ++ " " ++ world); /* console.log("Hello World"); */
 ```
 
 也可此參考 `Reason` 的 string API[文件](https://bucklescript.github.io/bucklescript/api/Js.String.html)
-
