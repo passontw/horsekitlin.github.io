@@ -1,6 +1,14 @@
 ---
 title: Reason-BasicType Part-II
+tags:
+  - Javascript
+  - IThome2018
+  - Reason
+category:
+  - Reason
+date: 2018-10-10 23:49:54
 ---
+
 
 # Basic Type
 
