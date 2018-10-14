@@ -1,12 +1,13 @@
 ---
 title: BuckleScript-Best-Friend
 tags:
-  - Javascript
-  - IThome2018
-  - Reason
+  - null
 category:
   - Reason
+date: 2018-10-14 23:16:34
+categories:
 ---
+
 
 # BuckleScript
 
