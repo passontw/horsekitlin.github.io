@@ -1,11 +1,12 @@
 ---
 title: BuckleScript-Best-Friend
 tags:
-  - null
+  - Javascript
+  - IThome2018
+  - Reason
 category:
   - Reason
 date: 2018-10-14 23:16:34
-categories:
 ---
 
 
@@ -206,3 +207,4 @@ Js.log(join([|"/", "hello", "/", "world"|]));
 再加上 `bs.splice` 來告訴 `Reason` 他是一個具有不固定長度參數的 function
 
 利用 `array` 的 長度是彈性的優點來做彈性的多參數處理
+
