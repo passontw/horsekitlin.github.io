@@ -9,10 +9,9 @@ category:
 date: 2018-10-01 11:51:55
 ---
 
-
 # What is Reason
 
-`Reason` 並不是一個新的語言，而是一種新的語法和工具鍊(toolchain)，，[Ocaml](http://ocaml.org/)支援。並支援既有的 NPM/YARN。
+`Reason` 並不是一個新的語言，而是一種新的語法和工具鍊(toolchain)，[Ocaml](http://ocaml.org/)支援。並支援既有的 NPM/YARN。
 
 藉由 [BuckleScript](https://bucklescript.github.io/)將 `Reason` 編譯為可閱讀的 `Javascript` 
 
