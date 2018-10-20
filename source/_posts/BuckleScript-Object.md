@@ -4,9 +4,12 @@ tags:
   - Javascript
   - IThome2018
   - Reason
+  - BuckleScript
 category:
   - Reason
+date: 2018-10-19 15:49:47
 ---
+
 
 # Bukle Script Object
 
@@ -357,7 +360,7 @@ type person = {
 
 但是無法編譯成功
 
-因為  Reason/OCaml 的對象工作方式是不一樣的
+因為 `Reason/OCaml` 的對象工作方式是不一樣的
 
 #### 解決方案
 
@@ -398,7 +401,13 @@ type person = Js.t({
   job: string
 });
 
-[@bs.val] external john : person = "john";
-let johnName = john##name
+let john = {
+  "name": "john",
+  "age": 11,
+  "job": "development"
+};
+
+let johnName = john##name;
 ```
 
+明天再來談談 `Some` 和 `Option` 的問題

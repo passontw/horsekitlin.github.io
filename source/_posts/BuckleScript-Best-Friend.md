@@ -4,11 +4,11 @@ tags:
   - Javascript
   - IThome2018
   - Reason
+  - BuckleScript
 category:
   - Reason
 date: 2018-10-14 23:16:34
 ---
-
 
 # BuckleScript
 
@@ -76,7 +76,7 @@ let helloWorld = {j|hello, $world|j};
 
 ### 全域變數
 
-**note**: **先看看官方是否有先幫你完成的 [API](https://reasonml.github.io/api/index.html) 再決定是否要自己處理**
+**note: 先看看官方是否有先幫你完成的 [API](https://reasonml.github.io/api/index.html) 再決定是否要自己處理**
 
 ```reason
 [@bs.val] external setTimeout/* 在 Reason 中使用的模組名稱 */: (unit => unit, int) => float = "setTimeout";/* 對應到 Javascript 中的模組名稱 */
