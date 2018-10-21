@@ -10,7 +10,6 @@ category:
 date: 2018-10-19 15:49:47
 ---
 
-
 # Bukle Script Object
 
 Javascript 中的物件有兩個主要的目的

@@ -1,10 +1,11 @@
 ---
 title: RN-使用Enzyme 的 mount 測試 React Native
 tags:
+  - ReactNative
   - Javascript
-  - React Native
+  - React
 date: 2018-01-11 10:05:03
-categories:
+categories: ReactNative
 ---
 
 # React 與 React Native
