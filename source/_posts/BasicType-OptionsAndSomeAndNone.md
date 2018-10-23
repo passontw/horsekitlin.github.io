@@ -1,13 +1,14 @@
 ---
 title: BasicType-OptionsAndSomeAndNone
 tags:
-  - null
+  - Javascript
+  - IThome2018
+  - Reason
+  - BuckleScript
 category:
   - Reason
 date: 2018-10-20 23:12:05
-categories:
 ---
-
 
 # Null 和 Undefined 和 Option
 
