@@ -4,7 +4,7 @@ tags:
   - Javascript
   - IThome2018
   - Reason
-category:
+categories:
   - Reason
 date: 2018-10-11 11:24:09
 ---

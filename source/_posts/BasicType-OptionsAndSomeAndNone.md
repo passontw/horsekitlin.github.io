@@ -5,7 +5,7 @@ tags:
   - IThome2018
   - Reason
   - BuckleScript
-category:
+categories:
   - Reason
 date: 2018-10-20 23:12:05
 ---

@@ -1,7 +1,7 @@
 ---
 title: Debugging-Nodejs-With-VSCode
 date: 2017-06-09 10:27:20
-category:
+categories:
   - Javascript
 tags:
   - Nodejs
