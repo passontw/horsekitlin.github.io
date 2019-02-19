@@ -40,12 +40,20 @@ categories: Block Chain
 
 Truffle 有提供一些套件協助建立 `DAPP`
 
-[Truffle Boxes](http://truffleframework.com/boxes/)
+[Truffle Boxes](https://truffleframework.com/boxes)
+
+我常用 `React` 開發
+
+[Truffle React Box](https://truffleframework.com/boxes/react)
+
+所以這裡使用 React 作為範例
 
 建立一個 `pet-shop` 的 basic project
 
 ```
-  $ truffle unbox pet-shop
+  $ npx truffle unbox react
+  $ npm install -g truffle
+  $ truffle unbox react
 ```
 
 ```
@@ -58,21 +66,50 @@ Truffle 有提供一些套件協助建立 `DAPP`
 
 ```
   .
-  ├── contracts
-  ├── migrations
-  ├── src
-  │   ├── css
-  │   ├── fonts
-  │   ├── images
-  │   └── js
-  └── test
+├── LICENSE
+├── box-img-lg.png
+├── box-img-sm.png
+├── bs-config.json
+├── build
+│   └── contracts
+│       ├── Adoption.json
+│       └── Migrations.json
+├── contracts
+│   ├── Adoption.sol
+│   └── Migrations.sol
+├── migrations
+│   └── 1_initial_migration.js
+├── package-lock.json
+├── package.json
+├── src
+│   ├── css
+│   │   ├── bootstrap.min.css
+│   │   └── bootstrap.min.css.map
+│   ├── fonts
+│   │   ├── glyphicons-halflings-regular.eot
+│   │   ├── glyphicons-halflings-regular.svg
+│   │   ├── glyphicons-halflings-regular.ttf
+│   │   ├── glyphicons-halflings-regular.woff
+│   │   └── glyphicons-halflings-regular.woff2
+│   ├── images
+│   │   ├── boxer.jpeg
+│   │   ├── french-bulldog.jpeg
+│   │   ├── golden-retriever.jpeg
+│   │   └── scottish-terrier.jpeg
+│   ├── index.html
+│   ├── js
+│   │   ├── app.js
+│   │   ├── bootstrap.min.js
+│   │   ├── truffle-contract.js
+│   │   └── web3.min.js
+│   └── pets.json
+├── test
+└── truffle-config.js
 ```
+
 * contracts : `Solidity` 的檔案，在這個範例中有一個 `Migrations.sol` 的範例檔案
-
 * migrations : Truffle 利用 `migrations system` 來處理開發環境，A migration is an additional special smart contract that keeps track of changes.
-
 * test : 測試檔案
-
 * truffle.js : Truffle 的設定檔案
 
 ### 3. 寫一個基本的合約
@@ -82,7 +119,7 @@ Truffle 有提供一些套件協助建立 `DAPP`
 Adoption.sol
 
 ```solidity
-pragma solidity ^0.4.17;
+pragma solidity ^0.5.0;
 
 contract Adoption {
 
@@ -97,10 +134,12 @@ contract Adoption {
 
 儲存了 20 個 byte 得值， 每一個帳號和合約在 `Ethereum block chain` 都擁有一個 `adress`
 
+這個變數是 **唯一的**
+
 在 `Adoption.sol` 中宣告一個 `adress`
 
 ```solidity
-pragma solidity ^0.4.17;
+pragma solidity ^0.5.0;
 
 contract Adoption {
   address[16] public adopters;
@@ -113,33 +152,60 @@ Array 內有一種類型，在這裡的長度設定為 `16`
 * `adopters` 設定是 public， public 有 `getter method` 回傳一個值
 但是因為在這個範例 `adopters` 是一個陣列，所以等等會寫一個 function 回傳整個陣列
 
-### First Function
+### First Function: Adopting a pet
 
-* In Solidity the types of both the function parameters and output must be specified. In this case we'll be taking in a petId (integer) and returning an integer.
+```solidity
+pragma solidity ^0.5.0;
 
-* We are checking to make sure petId is in range of our adopters array. Arrays in Solidity are indexed from 0, so the ID value will need to be between 0 and 15. We use the require() statement to ensure the ID is within range.
+contract Adoption {
+  address[16] public adopters;
+  // Adopting a pet
+  function adopt(uint petId) public returns (uint) {
+    require(petId >= 0 && petId <= 15);
 
-* If the ID is in range, we then add the address that made the call to our adopters array. The address of the person or smart contract who called this function is denoted by msg.sender.
+    adopters[petId] = msg.sender;
 
-* Finally, we return the petId provided as a confirmation.
+    return petId;
+  }
+}
+```
 
-### Second Function
+* 在 `Solidity` 中必須要定義函式的 輸入值和回傳值的型態，在這個範例中會接收一個 **petId** (整數)也會回傳一個整數
+
+* 在函式要保證 **petId** 的範圍值必須在 `adopters 陣列` 範圍內, `Solidity` 中的陣列 index 是從 0 開始，所以這個 ID 會在 0~15 之間， 我們利用 `require()` 來定義這個範圍
+
+* 如果這個 ID 在允許的範圍內 (0 ~ 15) 之間，則新增這個人的位址到採用者的陣列 `adopters` 而這個人的位址則是利用 `msg.sender` 來取得
+
+* 最後回傳 `petId` 提供確認
+
+### Second Function: Retrieving the adopters
 
 array getter 只能回傳一個值，但是但是 16 個 API 不是很實際，所以我們需要一個 API 來回傳所有的寵物列表
 
+1.  在 `adopt()` 後增加一個 `getAdopters()` 這個 function
+
+```solidity
+  function getAdopters() public view returns (address[16] memory) {
+    return adopters;
+  }
 ```
-pragma solidity ^0.4.17;
+2. `adopters`已經宣告過了，可以直接回傳，但是要確認加上 `memory` 這個關鍵字 確認給出的是變量的位置
+3. 而 `view` 這個關鍵字則代表這個 function 部會修改這個合約的任何狀態值，更詳細的資訊可以[查看這](https://solidity.readthedocs.io/en/latest/contracts.html#view-functions)
+
+`memory` 表示 adopters 的值存在記憶體裡
+
+```solidity
+pragma solidity ^0.5.0;
 
 contract Adoption {
   address[16] public adopters;
   function adopt(uint petId) public returns (uint) {
     require(petId >= 0 && petId <= 15);
-
     adopters[petId] = msg.sender;
     return petId;
   }
 
-  function getAdopters () public view returns (address[16]) {
+  function getAdopters() public view returns (address[16] memory) {
     return adopters;
   }
 }
@@ -161,15 +227,21 @@ Truffle 有一個開發者控制台， 他會生成一個開發區塊鏈，可�
   $ truffle compile
 ```
 
+這時候應該會看到這些資訊
+```
+Compiling ./contracts/Adoption.sol...
+Compiling ./contracts/Migrations.sol...
+Writing artifacts to ./build/contracts
+```
+
 #### 部署
 
-A migration is a deployment script meant to alter the state of your application's contracts, moving it from one state to the next. For the first migration, you might just be deploying new code, but over time, other migrations might move data around or replace a contract with a new one.
-
-你會在 `migrations/` 裡面有一個 `1_initial_migration.js` 這是負責部署 `Migrations.sol` 這份合約的範例
-
-This handles deploying the Migrations.sol contract to observe subsequent smart contract migrations, and ensures we don't double-migrate unchanged contracts in the future
+資料夾內會看到 `migrations/1_initial_migration.js` 這個檔案，，他是一個更改 contract 狀態的部屬腳本，會避免未來重複部署同樣的 `Migrations.sol` 合約
 
 現在我們需要新增一個屬於我們自己的部署 script
+
+1. 在 `migrations` 資料夾中新增一個檔案 `2_deploy_contracts.js`
+2. `2_deploy_contracts.js` 內容
 
 ```js
 const Adoption = artifacts.require("Adoption");
@@ -183,116 +255,119 @@ module.exports = function (deployer){
 
 若您尚未下載 [download Ganache](http://truffleframework.com/ganache)
 
-![image](http://truffleframework.com/tutorials/images/pet-shop/ganache-initial.png)
+![image](https://truffleframework.com/img/docs/ganache/quickstart/accounts.png)
 
 然後回到終端機
 
 ```
   $ truffle migrate
-  Using network 'development'.
+Compiling ./contracts/Adoption.sol...
+Writing artifacts to ./build/contracts
 
-Running migration: 2_deploy_contracts.js
-  Deploying Adoption...
-  ... 0x05ea7e5292d02a2ffb78a0a6e905a7a2a083d3b3bca6eef300ce9a0e8c0e714a
-  Adoption: 0xac30aad46a83f8e8de3f452b0d4c175a1173a54b
-Saving successful migration to network...
-  ... 0x176cef7ecc425a8952f86020e76701c934a2a7ae06a0ac26a57867450a42b6bd
-Saving artifacts...
+⚠️  Important ⚠️
+If you're using an HDWalletProvider, it must be Web3 1.0 enabled or your migration will hang.
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      5777
+> Block gas limit: 6721975
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x9965bb63687936396ef9db5830b9e0a9ff36f10108b775abf944fc86f061454c
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x3216882738b0ca58BD4a2a3125Fa4bC651100C7e
+   > account:             0x10D045570AD2a69921Dc4e6b55148e071fC7484D
+   > balance:             99.99430184
+   > gas used:            284908
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00569816 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00569816 ETH
+
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.00569816 ETH
 ```
 
 在 `Ganache` 中 blockchain 的狀態改變了從原本的 0 改變為 4 ，之後會再討論到交易成本
 
 寫好第一個合約並且部署上了區塊鏈，接下來要開始測試一下你的合約
 
-#### 測試你的合約
+`transaction hash` 代表這個合約的序號
 
-在 `test` 資料夾裡建立一個 `TestAdoption.sol` 的檔案
+你可以透過這個序號來搜尋這個合約
 
-TestAdoption.sol
-
-```
-pragma solidity ^0.4.17;
-import "truffle/Assert.sol";
-import "truffle/DeployedAddresses.sol";
-import "../contracts/Adoption.sol";
-
-contract TestAdoption {
-  Adoption adoption = Adption(DeployedAddresses.Adoption());
-}
-```
-
-這裡有 `import` 三個檔案
-
-* `Assert.sol`: 可以在測試中檢察值，然後送出相對的 assert 方便檢查哪一部分有錯誤[Here's a full list of the assertions included with Truffle.](https://github.com/trufflesuite/truffle-core/blob/master/lib/testing/Assert.sol)
-* `DeployedAddresses.sol`: 測試的時候會部署一個測試的合約，測試的時候會部署一個測試的 `contract`，然後透過這個 可以取得一個位址
-* 要測試的 `contract`
-
-`Assert.sol` 和 `DeployedAddresses.sol` 是在 truffle 套件中，而不是在資料夾內
-
-#### 測試 adopt() function
-
-To test the adopt() function, recall that upon success it returns the given petId. We can ensure an ID was returned and that it's correct by comparing the return value of adopt() to the ID we passed in
-
-TestAdoption.sol
+回到 Terminal migrate 合約到鍊上
 
 ```
-pragma solidity ^0.4.17;
-import "truffle/Assert.sol";
-import "truffle/DeployedAddresses.sol";
-import "../contracts/Adoption.sol";
-
-contract TestAdoption {
-  Adoption adoption = Adption(DeployedAddresses.Adoption());
-
-  function testUserCanAdoptPet() public {
-    uint returnedId = adoption.adopt(8);
-    uint expected = 8;
-
-    Assert.equal(returnedId, expected, "Adoption of pet ID 8 should be recorded.");
-  }
-}
+  $ truffle migrate
 ```
 
-* 先宣告一個領養八號寵物的合約
-* 宣告一個預想中領養八號寵物的結果
-* Assert.equal() 做兩個的比對
-
-#### 測試恢復一個領養的合約
-
-TestAdoption.sol
-
+結果會是
 ```
-pragma solidity ^0.4.17;
-import "truffle/Assert.sol";
-import "truffle/DeployedAddresses.sol";
-import "../contracts/Adoption.sol";
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      5777
+> Block gas limit: 6721975
 
-contract TestAdoption {
-  Adoption adoption = Adption(DeployedAddresses.Adoption());
 
-  function testUserCanAdoptPet() public {
-    uint returnedId = adoption.adopt(8);
-    uint expected = 8;
+2_deploy_contracts.js
+=====================
 
-    Assert.equal(returnedId, expected, "Adoption of pet ID 8 should be recorded.");
-  }
+   Deploying 'Adoption'
+   --------------------
+   > transaction hash:    0xac113a702da3ab7a8fde7ec8941143ff854cb8ae3f2457e1cc9251a0fa62a2b8
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xAc30aaD46a83f8E8De3f452B0d4C175a1173a54b
+   > account:             0x10D045570AD2a69921Dc4e6b55148e071fC7484D
+   > balance:             99.98838348
+   > gas used:            253884
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00507768 ETH
 
-  function testGetAdopterAddressByPetId() public {
-    address expected = this;
-    address adopter = adoption.adopters(8);
-    Assert.equal(adopter, expected, "Owner of pet ID 8 should be recorded.");
-  }
-}
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00507768 ETH
+
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.00507768 ETH
 ```
 
-`TestAdoption` 會發送一個真實的交易，我們會設定預期的結果為 `this` 會比對兩個的位址是否相同
+![image](https://truffleframework.com/img/tutorials/pet-shop/ganache-migrated.png)
 
-#### 檢查所有寵物
+1. 可以打開 `Ganache` 之前的數值是 0 現在會變成 4，也可以看到第一個帳號原本是 `100`但是現在不到 `100` (我的顯示是 99.99)，因為這次的 migration 花費了乙太幣，等等會討論到更多關於這個花費的問題
 
-TestAdoption.sol
+#### 測試智能合約
 
-```
-pragma solidity ^0.4.17;
+Truffle 如何測試你的合約呢？
+
+1. 建立一個 `TestAdoption.sol` 在 `test` 的資料夾下
+2. 內容如下
+
+```solidity
+pragma solidity ^0.5.0;
+
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
 import "../contracts/Adoption.sol";
@@ -300,30 +375,68 @@ import "../contracts/Adoption.sol";
 contract TestAdoption {
   Adoption adoption = Adoption(DeployedAddresses.Adoption());
 
-  function testUserCanAdoptPet() public {
-    uint returnedId = adoption.adopt(8);
-    uint expected = 8;
+  uint expectedPetId = 8;
 
-    Assert.equal(returnedId, expected, "Adoption of pet ID 8 should be recorded.");
-  }
-
-  function testGetAdopterAddressByPetId() public {
-    address expected = this;
-    address adopter = adoption.adopters(8);
-    Assert.equal(adopter, expected, "Owner of pet ID 8 should be recorded.");
-  }
-
-  function testGetAdopterAdderssByPetIdInArray() public {
-    address expected = this;
-
-    address[16] memory adopters = adoption.getAdopters();
-
-    Assert.equal(adopters[8], expected, "Owner of pet ID 8 should be recorded.");
-  }
+  address expectedAdopter = address(this);
 }
 ```
 
-`memory` 表示 adopters 的值存在記憶體裡，確定 `8` 是否在陣列之中
+* `Assert.sol`: 提供 assertions 使用，判斷是否相等，大於小於等等的判斷
+* `DeployedAddresses.sol`: 側是的時後 Truffle 會在鍊上部署一個新的實例，會取得那一個的位址來使用模擬
+* `Adoption.sol`: 要測試的智能合約內容
+
+然後再定義其他的變數
+* `DeployedAddresses` 模擬部署一個智能合約取得他的位址
+* `expectedPetId` 提供測試的寵物 ID
+* 因為預計 `TestAdoption` 合約會發送交易，預期的 `sneder` 位址設為此，取得現在合約的 `address`
+
+##### 測試 `adopt()` 函式
+
+測試 `adopt()` 使用這個函式成功後回傳 `petId`
+
+可以判斷這個 `petId` 的直是否正確
+
+1. 在 `TestAdoption.sol` 中的 `Adoption` 中增加下面的程式碼
+
+```solidity
+function testUserCanAdoptPet() public {
+  uint returnedId = adoption.adopt(expectedPetId);
+
+  Assert.equal(returnedId, expectedPetId, "Adoption of the expected pet should match what is returned.");
+}
+```
+
+* `expectedPetId` 是我們要認養的 寵物 ID 跟回傳的 `returnedId`是否相等
+
+##### 測試單個寵物主人的主人
+
+public 變數會有一個 `getter` 的 function 來取得，測試的過程中數據會持續存在
+
+所以可以沿用 `expectedPetId` 在其他測試中
+
+1. 增加一個 function 在 `TestAdoption.sol` 中
+
+```solidity
+function testGetAdopterAddressByPetId() public {
+  address adopter = adoption.adopters(expectedPetId);
+
+  Assert.equal(adopter, expectedAdopter, "Owner of the expected pet should be this contract");
+}
+```
+
+取得 `adopter` 的位址 存在合約中，利用 Assert 判斷是否一致
+
+##### 測試所有寵物主人
+
+```solidity
+function testGetAdopterAddressByPetIdInArray() public {
+  address[16] memory adopters = adoption.getAdopters();
+
+  Assert.equal(adopters[expectedPetId], expectedAdopter, "Owner of the expected pet should be this contract");
+}
+```
+
+注意 `adopters` 屬性，因為有 `memory` 關鍵字代表存在記憶體中，不是存在合約的 storage 中，當 `adopters` 在一個陣列中，比較了陣列中的 `expectedAdopter`做比較
 
 #### Running test
 
@@ -341,8 +454,6 @@ contract TestAdoption {
     ✓ testGetAdopterAddressByPetId (64ms)
     ✓ testGetAdopterAdderssByPetIdInArray (138ms)
 ```
-
-### 建立一個 User Interface
 
 # 參考資料
 
