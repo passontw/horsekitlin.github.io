@@ -247,7 +247,6 @@ let render: string => string;
 * Functors 必須大寫字母開頭（就像是模組/標記式）
 * Functors 必須註解參數
 
-
 ```reason
 module type Comparable = {
   type t;
