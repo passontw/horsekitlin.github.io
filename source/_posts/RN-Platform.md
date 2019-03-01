@@ -109,3 +109,41 @@ const styles = StyleSheet.create({
 
 或是像是這樣也可以依據不同的平台引用 component
 
+## OS Version
+
+```js
+import React from 'react';
+import { StyleSheet, Text, View, Platform } from 'react-native';
+
+const SpecificPlatformComponent = Platform.select({
+  ios: () => <Text>I am use IOS</Text>,
+  android: () => <Text>I am use Android</Text>,
+});
+
+const SpecificPlatformVersionComponent = Platform.select({
+  ios: () => <Text>my Iphone Version is {Platform.Version}</Text>,
+  android: () => <Text>my Android Version is {Platform.Version}</Text>,
+});
+
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>Open up App.js to start working on your app!</Text>
+        <SpecificPlatformComponent />
+        <SpecificPlatformVersionComponent />
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+```
