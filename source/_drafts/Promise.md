@@ -1,6 +1,5 @@
 ---
 title: Promise 的那些事
-date: 2017-04-22 13:25:52
 categories: Javascript
 tags: 
   - Javascript
@@ -45,7 +44,7 @@ tags:
 
 利用FB的爬蟲作為範例
 
-```
+```js
 https://graph.facebook.com/4?fields=id,name&access_token=1573834372888743|kwOadcjpVBhyNj5_r_m_Teffb3Y
 ```
 
@@ -53,7 +52,7 @@ https://graph.facebook.com/4?fields=id,name&access_token=1573834372888743|kwOadc
 
 Demo Code
 
-```
+```js
 var fetch = require('node-fetch');
 
 async function main() {
@@ -66,7 +65,7 @@ main();
 
 但是我要抓 Facebook UID 4,5,6,7,8,9,10 的時候
 
-```
+```js
 var fetch = require('node-fetch');
 
 function main() {
@@ -91,7 +90,7 @@ main();
 
 所以結果是
 
-```
+```js
 Error: Hello Error 3
     at uids.map (/Users/tomas/otherProjects/blog/demo/nodejs/fbAPIGetUser.js:7:29)
     at Array.map (native)

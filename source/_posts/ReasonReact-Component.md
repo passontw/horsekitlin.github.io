@@ -82,7 +82,7 @@ let make = (~name, ~age=?, ~className="box", _children) =>
   <Foo name="Reason" age={this.props.age} />
 ```
 
-如果這樣傳姪的話有可能會有 bug
+如果這樣傳值的話有可能會有 bug
 
 因為 `age` 有可能是 Null 的
 
@@ -240,4 +240,4 @@ let theChildren = [| <div />, <div /> |];
 
 詳情可以參閱 [children spread syntax](https://reasonml.github.io/docs/en/jsx.html#children-spread)
 
-更詳細的Childre 後續會再做了解
+更詳細的 Children 後續會再做了解

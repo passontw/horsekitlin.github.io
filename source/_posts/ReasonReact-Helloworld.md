@@ -199,3 +199,78 @@ let make = (~message, _children) => {
 變數部分也改用 `()` 而不是以前 React 使用的 `{}`
 
 看到這邊其實跟之前的 React 會有一些不同
+
+先做一些調整
+
+**src/index.html**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ReasonReact Examples</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="Index.js"></script>
+</body>
+</html>
+```
+
+**App.re**
+```reason
+let component = ReasonReact.statelessComponent("App");
+
+let make = (_children) => {
+  ...component,
+  render: (_) =>
+    <>
+      (ReasonReact.string("Component1:"))
+      <Component1 message="Hello!" />
+      (ReasonReact.string("Component2:"))
+      <Component2 greeting="Hello!" />
+    </>
+};
+```
+
+## Hot Reload
+
+這時候會發現當我們更新了程式碼之後還是不會自動 Reload
+
+還是有點麻煩
+
+其實只要稍微調整一下 `webpack.config.js`
+
+```js
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const outputDir = path.join(__dirname, 'build/');
+
+const isProd = process.env.NODE_ENV === 'production';
+
+module.exports = {
+  entry: './src/Index.bs.js',
+  mode: isProd ? 'production' : 'development',
+  output: {
+    path: outputDir,
+    publicPath: outputDir,
+    filename: 'Index.js',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+    })
+  ],
+  devServer: {
+    compress: true,
+    contentBase: outputDir,
+    port: process.env.PORT || 8000,
+    historyApiFallback: true
+  }
+};
+```
+
+這樣就完成囉!
+
+Have fun!
