@@ -54,7 +54,7 @@ type tSemver = Js.t(semverInstance);
 *bsconfig.json*
 
 ```json
-"bs-dependencies": [
+  "bs-dependencies": [
     "bs-express"
   ],
 ```
