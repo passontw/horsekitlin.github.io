@@ -1,0 +1,4 @@
+---
+title: Golang-Var
+tags:
+---
