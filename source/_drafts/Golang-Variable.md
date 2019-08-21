@@ -1,4 +1,7 @@
 ---
-title: Golang-Var
+title: Golang-Variable
 tags:
+  - Golang
+categories:
+  - Golang
 ---
