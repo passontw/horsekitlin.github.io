@@ -394,3 +394,24 @@ let otherFunction = (~person as {name} as thePerson) => {
 someFunction(~person=tomas);
 otherFunction(~person=tomas);
 ```
+
+### Mutable
+
+有時候我們會需要可以變更的變數
+
+Reason 也有保留這部分的彈性
+
+```reason
+type total = ref(int);
+let x: total = ref(5);
+x := x^ + 1;
+Js.log(x); // 6
+```
+
+`ref` 只是一個語法糖
+
+透過 `:=` 修改
+
+`^` 代表取出他的值
+
+這樣就可以簡單地在 Reason 中使用 Mutation 的技巧
