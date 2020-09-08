@@ -3,7 +3,11 @@ title: SocketCluster Cluster initial.md
 tags:
   - Nodejs
   - SocketCluster
+date: 2020-09-09 01:05:05
+categories:
+  - Nodejs
 ---
+
 
 # Basic Install
 
