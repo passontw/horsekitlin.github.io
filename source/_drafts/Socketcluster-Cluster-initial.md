@@ -119,9 +119,59 @@ setTimeout(() => {
 
 Client 也可以利用 `try catch` 來接收到錯誤
 
+## Subscribe and Publish
+
 另外也可以建立 `channel` 來處理 subscribe 與 publish
 
-在未來會繼續研究
+在 `Client` 中加上
+
+```javascript
+(async () => {
+  let channel = socket.subscribe('foo');
+  for await (let data of channel) {
+    // ... Handle channel data.
+  }
+})();
+```
+
+就可以在開始聽取 `foo` 的頻道
+
+接受該頻道的訊息
+
+不只是 Server 的訊息會接收
+
+其他 `Client` 也可以透過這些頻道彼此溝通
+
+#### Client
+
+不需要 acknowledgment 的訊息
+
+```javascript
+socket.transmitPublish('foo', 'This is some data');
+```
+
+需要 acknowledgment 的訊息
+
+```javascript
+await socket.invokePublish('foo', 'This is some more data');
+```
+
+#### Server
+
+不需要 acknowledgment 的訊息
+
+```javascript
+agServer.exchange.transmitPublish('foo', 'This is some data');
+```
+
+需要 acknowledgment 的訊息
+
+```javascript
+await agServer.exchange.invokePublish('foo', 'This is some more data');
+```
+
+不管是 `Client` 或是 `Server` 如果是需要 acknowledmgment 的訊息
+需要配合 `Consumers` 的配合
 
 # 參考資料
 
