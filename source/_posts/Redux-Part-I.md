@@ -179,6 +179,14 @@ export default (...middlewares) => (reducer, initialState) => {
 };
 ```
 
+可以一步一步慢慢了解 `Redux` 如何形成 `Middleware` 的過程
+
+最後可以看到這個範例
+
+接下來了解如何實做 `Redux`  中的  `Middleware` 之後
+
+再來看看加入 `Thunk` ,  `Saga` 概念的 Data flow
+
 [The Final Approach](https://redux.js.org/advanced/middleware#the-final-approach)
 
 # 參考資源
