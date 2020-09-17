@@ -1,0 +1,48 @@
+---
+title: React-Native-connect-server
+tags:
+  - React Native
+  - SocketCluster
+  - Nodejs
+  - React
+date: 2020-09-15 00:56:00
+categories:
+  - SocketCluster
+---
+
+# Initial React Native
+
+```
+  $ npx react-native init imapp && cd imapp
+```
+
+## Run on ios
+
+```
+  $ npx react-native-run-ios
+```
+
+## Install SocketCluster Client
+
+```
+  $ yarn add socketcluster-client
+```
+
+## Initial Socket
+
+```javascript
+import SocketClusterClient from 'socketcluster-client';
+
+let socket = SocketClusterClient.create({
+  hostname: 'localhost',
+  port: 8000
+});
+
+socket.transmit('foo', 123);
+```
+
+Server 可以收到 `data`
+
+基本上已經可以確認接通了 SocketCluster Server 與 Client
+
+之後就可以準備其他事情
