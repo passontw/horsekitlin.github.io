@@ -8,113 +8,78 @@ categories:
   - React
 ---
 
-# 實做一個簡單的 Redux-Saga
+# 前情提要
 
-Redux-Saga 是基於 Producer/Consumer Pattern 實作程式碼
+角色
 
-生產與消費的對象稱作 task 或 taker
+* 生產者 - 產出任務 `store.dispatch`
+* 消費者 - 消費任務 `saga function`
+* channel - 暫存任務的地方
 
-**Saga function 是我們在使用 redux-saga 時，會用 generator 撰寫處理非同步的函式**
+# Redux-Saga 的組成
 
-👉 當生產一個 task 時，會先把一個 saga function 轉換成 iterator
+* createMiddleware
+* effects
+* Channel
 
-```javascript
-function* saga() {
-  yield console.log('1');
-  yield console.log('2');
-  yield console.log('3');
-}
+## createMiddleware
 
-const iterator = saga();
-```
+基於 redux 所以要建立一個 `sagaMiddleware`
 
-然後用 `Generator runner` 把 iterator 包裝成一個可以自動迭代的函式 next()
+[createMiddleware](https://github.com/redux-saga/redux-saga/blob/master/packages/core/src/internal/middleware.js)
 
-而這個 next() 就是 task (taker)
+會回傳一個 `sagaMiddleware`
 
-**next()**
+### sagaMiddleware
 
-```javascript
-function runner(itr) {
-  function next(arg) {
-    let result = itr.next(arg);
-    if (result.done) {
-      return arg;
-    } else {
-      return Promise.resolve(result.value).then(next);
-    }
-  }
-  return next();
-}
+在 `sagaMiddleware` 有一個 `run` 的參數
 
-// 將上方的 iterator 傳入
-runner(iterator)
-```
+他是之前說過的 Generator Runner 
 
-當需要消化一個 `task` 的時候 會呼叫 `next()` 自動迭代 iterator
+[sagaRunner](https://github.com/redux-saga/redux-saga/blob/master/packages/core/src/internal/runSaga.js)
 
-## 和 redux-saga 溝通
+第一個參數是傳入一個物件
 
-前面的都是 `Saga` 內部的實做 尚未與外部溝通
+在這個 `Function` 中 會利用 `saga` 產生 iterator
 
-所以需要讓外部有可以呼叫到  redux-saga 中的 producer 與 consumer
 
-這時候就需要 **saga middleware**
 
-它需要有兩個功能
+#### Channel
 
-一個是外部呼叫後 可以在 channel 中新增一個 `task`
+之前在生產者產生 task 之後需要有一個 channel 來暫存
 
-另一個是在外部呼叫 `store.dispatch(action)` 後，消耗在 channel 中相對應的 task
+這就是暫存的地方
 
-## 5 種 saga effect
+預設會有一個 channel(稍等再說)
 
-* take
-* call
-* put
-* takeEvery
-* fork 
+可以透過參數傳送一個 channel 
 
-例如經常使用的 `call`:
+否則會自動產生一個
 
-* type ：執行的 effect 型別 
-* fn：被執行的函式
-* args ：被執行的函式需要帶入的參數
+#### dispatch, getState
 
-```javascript
-export function call(fn, ...args) {
-  return {
-    isEffect: true,
-    type: "call",
-    fn,
-    args
-  };
-}
-```
+store 的參數傳入
 
-## Effect Runner
+#### context
 
-每一種 effect 都有其相對應的 effect runner
+待補
 
-讓每個 effect runner 各司其職
+#### sagaMonitor
 
-不用把很多概念混雜在一起
+[Interfaces](https://redux-saga.js.org/docs/api/)
 
-分開時會比較好管理
+提供外部的 Monitor 接口
 
-舉例來說，call 的 effect runner 會長這個樣子
+#### effectMiddlewares
 
-* fn : 在 saga function 中我們定義的 callback function
-* args : 在 saga function 中我們指定的 fn — callback function 傳入的參數
-* next : Generator runner 中的 next()，用於進行下一次迭代
+待補
 
-```javascript
-function runCallEffect({ fn, args }, next) {
-  fn.call(null, args)
-    .then(success => next(null, success))
-    .catch(error => next(error));
-}
-```
+#### onError
 
-[function call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+預設 logError
 
+待補
+
+# 參考資料
+
+[createMiddleware](https://github.com/redux-saga/redux-saga/blob/master/packages/core/src/internal/middleware.js)
