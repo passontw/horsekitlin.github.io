@@ -142,7 +142,7 @@ Middleware 概念就是一個一個的生產線
 
 再利用這個 `Middleware` 排定順序
 
-## Compose
+### Compose
 
 [redux compose](https://github.com/reduxjs/redux/blob/master/src/compose.ts)
 
@@ -154,9 +154,14 @@ const compose = (...fns) => (...payload) => {
 }
 ```
 
-`compose` 與 `pipe` 是 Middleware 的其中兩種
+`compose` 與 `pipe` 是 Middleware 的其中兩種應用
 
 ## 針對 Dispatch 做擴充
+
+目前 dispatch 只能做同步 `Action`
+
+但是並不符合我們的需求
+
 
 [Monkeypatching](https://redux.js.org/advanced/middleware#attempt-3-monkeypatching-dispatch)
 
@@ -183,11 +188,11 @@ export default (...middlewares) => (reducer, initialState) => {
 
 最後可以看到這個範例
 
+[The Final Approach](https://redux.js.org/advanced/middleware#the-final-approach)
+
 接下來了解如何實做 `Redux`  中的  `Middleware` 之後
 
 再來看看加入 `Thunk` ,  `Saga` 概念的 Data flow
-
-[The Final Approach](https://redux.js.org/advanced/middleware#the-final-approach)
 
 # 參考資源
 
