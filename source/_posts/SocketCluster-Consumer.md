@@ -233,3 +233,9 @@ Backend <p style="color: green;">Good</p>
   }
 })();
 ```
+
+下一個章節再來繼續處理一下 `API` 相關問題
+
+# 參考資料
+
+[Consumer](https://socketcluster.io/docs/consumers/)

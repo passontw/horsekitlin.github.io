@@ -5,6 +5,7 @@ tags:
   - SocketCluster
   - Nodejs
   - React
+  - ithome 12
 date: 2020-09-15 00:56:00
 categories:
   - SocketCluster
@@ -30,6 +31,8 @@ categories:
 
 ## Initial Socket
 
+App.js
+
 ```javascript
 import SocketClusterClient from 'socketcluster-client';
 
@@ -46,3 +49,7 @@ Server 可以收到 `data`
 基本上已經可以確認接通了 SocketCluster Server 與 Client
 
 之後就可以準備其他事情
+
+# 參考資料
+
+[socketcluster-Client](https://github.com/SocketCluster/socketcluster-client)

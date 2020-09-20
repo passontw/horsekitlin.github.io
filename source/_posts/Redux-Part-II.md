@@ -233,23 +233,26 @@ Redux-saga 其實背後的原理是 Producer 和 Consumer
 
   **WTF**
 
-  `take`建立一個 Effect 描述
+`take`建立一個 Effect 描述
   
- 指示 middleware 在 Store 等待指定的 action
+指示 middleware 在 Store 等待指定的 action
   
- Generator 會暫停
+Generator 會暫停
   
- 直到一個符合 pattern 的 action 被 dispatch
+直到一個符合 pattern 的 action 被 dispatch
 
- 簡單來說，` take `是用來註冊處理非同步的函式
+簡單來說 `take` 是用來註冊處理非同步的函式
   
- `take` 會 將處理非同步的函式所生成的 iterator 用 generator runner 包裝起來
+`take` 會 將處理非同步的函式所生成的 iterator 用 generator runner 包裝起來
   
- 最後呼叫 channel.take(cb) 
+最後呼叫 channel.take(cb) 
   
- 以 callback 的形式儲存在 channel 中
+以 callback 的形式儲存在 channel 中
 
- 在 redux-saga 的實作中
+在 redux-saga 的實作中
   
- 被儲存在 channel 中的 callback 稱作 `taker`
- 
+被儲存在 channel 中的 callback 稱作 `taker`
+
+這些原理講得有點抽象
+
+下個章節來看一下 `Redux-saga` 的 Source code 吧
