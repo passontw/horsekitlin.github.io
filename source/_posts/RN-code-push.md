@@ -30,8 +30,7 @@ categories: ReactNative
   # prepare app center
   $ yarn add appcenter appcenter-analytics appcenter-crashes --save-exact
 
-  # link react-native-code-push
-  $ react-native link
+  $ cd ios && pod install && cd ..
 ```
 
 ```

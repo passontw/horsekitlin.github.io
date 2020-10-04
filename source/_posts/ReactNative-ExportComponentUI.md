@@ -4,7 +4,8 @@ tags:
   - Javascript
   - ReactNative
 date: 2019-12-06 17:13:39
-categories: ReactNative
+categories:
+  - ReactNative
 ---
 
 # Setup
