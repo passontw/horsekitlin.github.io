@@ -9,7 +9,7 @@ categories: Block Chain
 
 # Truffle pet demo
 
-[延續](./Truffle-pet-demo.md)
+[延續](https://horsekitlin.github.io/2018/05/05/Truffle-pet-demo/)
 
 # 建立一個前端介面
 
