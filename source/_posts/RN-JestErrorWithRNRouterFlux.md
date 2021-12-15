@@ -1,11 +1,12 @@
 ---
 title: React Native import Image Error
 tags:
-  - ReactNative
+  - React Native
   - Javascript
   - React
 date: 2018-01-05 23:07:08
-categories: ReactNative
+categories:
+  - React Native
 ---
 
 React Native version: 0.51.0

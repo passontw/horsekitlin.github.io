@@ -1,10 +1,11 @@
 ---
-title: ReactNative-Platform
+title: React Native-Platform
 tags:
-  - ReactNative
+  - React Native
   - Javascript
   - React
-categories: ReactNative
+categories:
+  - React Native
 date: 2019-02-24 23:44:45
 ---
 

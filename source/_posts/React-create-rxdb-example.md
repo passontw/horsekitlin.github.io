@@ -2,7 +2,7 @@
 title: React-create-rxdb-example
 tags:
   - Javascript
-  - ReactNative
+  - React Native
 date: 2020-10-09 18:23:20
 categories:
   - React

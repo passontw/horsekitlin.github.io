@@ -2,10 +2,10 @@
 title: React-Native-Cache-PartII
 tags:
   - Javascript
-  - ReactNative
+  - React Native
 date: 2020-10-07 00:12:46
 categories:
-  - ReactNative
+  - React Native
 ---
 
 # 建立雙向鍊表的 Class

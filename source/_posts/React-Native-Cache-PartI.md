@@ -2,10 +2,10 @@
 title: React Native Cache PartI
 tags:
   - Javascript
-  - ReactNative
+  - React Native
 date: 2020-10-07 00:10:35
 categories:
-  - ReactNative
+  - React Native
 ---
 
 # LRU Cache

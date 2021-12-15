@@ -1,11 +1,11 @@
 ---
-title: ReactNative-fastlane-Android
+title: React Native-fastlane-Android
 tags:
   - Javascript
-  - ReactNative
+  - React Native
 date: 2020-12-26 02:19:46
 categories:
-  - ReactNative
+  - React Native
 ---
 
 # Fastlane Install

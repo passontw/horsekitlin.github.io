@@ -2,10 +2,11 @@
 title: RN-code-push
 date: 2019-01-02 11:06:03
 tags:
-  - ReactNative
+  - React Native
   - Javascript
   - React
-categories: ReactNative
+categories: 
+  - React Native
 ---
 
 # Initial React Native App

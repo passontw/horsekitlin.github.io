@@ -2,10 +2,10 @@
 title: React-Native-Notification-IOS
 tags:
   - Javascript
-  - ReactNative
+  - React Native
 date: 2020-10-04 19:52:17
 categories:
-  - ReactNative
+  - React Native
 ---
 
 # IOS

@@ -1,11 +1,11 @@
 ---
-title: ReactNative-ExportComponentUI
+title: React Native-ExportComponentUI
 tags:
   - Javascript
-  - ReactNative
+  - React Native
 date: 2019-12-06 17:13:39
 categories:
-  - ReactNative
+  - React Native
 ---
 
 # Setup

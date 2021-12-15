@@ -2,10 +2,10 @@
 title: React-Native-Notification-Android
 tags:
   - Javascript
-  - ReactNative
+  - React Native
 date: 2020-10-04 21:27:22
 categories:
-  - ReactNative
+  - React Native
 ---
 
 # Android

@@ -1,11 +1,12 @@
 ---
 title: RN-JestInReactNative
 tags:
-  - ReactNative
+  - React Native
   - Javascript
   - React
 date: 2019-01-08 19:55:46
-categories: ReactNative
+categories:
+  - React Native
 ---
 
 # Initial project

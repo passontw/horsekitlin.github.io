@@ -2,10 +2,10 @@
 title: React-Native-Fastlane-IOS
 tags:
   - Javascript
-  - ReactNative
+  - React Native
 date: 2020-10-12 21:16:21
 categories:
-  - ReactNative
+  - React Native
 ---
 
 # Setting Up fastlane
