@@ -1,2192 +1,1174 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-tw">
+<html lang="zh-tw">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Tomas Lin">
 
 
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Tomas, React, React Native, Nodejs, Javascript, ES6, webpack">
-
-
-
-
-
-
-
-
-  <meta property="fb:admins" content="279782192201043">
-  <meta property="fb:app_id" content="179588245956664">
-
+    
+    
 
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="湯瑪士的部落格">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://horsekitlin.github.io/index.html">
 <meta property="og:site_name" content="湯瑪士的部落格">
 <meta property="og:locale" content="zh-tw">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="湯瑪士的部落格">
 
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Tomas'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+    <link rel="alternate" href="/atom.xml" title="湯瑪士的部落格" type="application/atom+xml">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+    <link rel="shortcut icon" href="/favicon.png">
 
 
 
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
 
-  <title>湯瑪士的部落格</title>
-  
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>湯瑪士的部落格</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '179588245956664',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/zh_tw/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
 </script>
 
 
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
 
 
 
 
 
 
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Tomas Lin</a></h1>
+        </hgroup>
 
-</head>
+        
+        <p class="header-subtitle">技術手扎！不定期更新</p>
+        
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+        
 
-  
-  
-    
-  
 
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/archives/">主頁</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">標籤</a></li>
+                        
+                            <li><a href="/about/">關於我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:passon.com.tw@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/passontw" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BuckleScript/">BuckleScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Css/">Css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DesignPatten/">DesignPatten</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FunctionPrograming/">FunctionPrograming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IThome2018/">IThome2018</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IThome2023/">IThome2023</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/">Kubernetes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-design/">Material-design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MessageQueue/">MessageQueue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microservies/">Microservies</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reason/">Reason</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SocketCluster/">SocketCluster</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sodility/">Sodility</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Themes/">Themes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Translate/">Translate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Truffle/">Truffle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/">VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ithome-12/">ithome 12</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-boot/">spring-boot</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
 
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">湯瑪士的部落格</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">技術手扎！不定期更新</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
 </div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Tomas Lin</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Tomas Lin</a></h1>
+            </hgroup>
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            <p class="header-subtitle">技術手扎！不定期更新</p>
             
-            首頁
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            關於
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            標籤
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分類
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">主頁</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">標籤</a></li>
+                
+                    <li><a href="/about/">關於我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:passon.com.tw@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/passontw" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
+      <div class="body-wrap">
+  
+    <article id="post-Day-05-Deploy-https-website" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/10/01/Day-05-Deploy-https-website/" class="article-date">
+      <time datetime="2023-10-01T06:54:00.000Z" itemprop="datePublished">2023-10-01</time>
+</a>
 
 
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/26/ReactNative-fastlane-Android/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/12/26/ReactNative-fastlane-Android/" itemprop="url">React Native-fastlane-Android</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/10/01/Day-05-Deploy-https-website/">Day-05-Deploy-https-website-part01</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-12-26T02:19:46+08:00">
-                2020-12-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/12/26/ReactNative-fastlane-Android/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/12/26/ReactNative-fastlane-Android/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          Fastlane Install1234$ bundle config set path 'vendor/bundle'$ cd android$ bundle install$ bundle exec fastlane init
-Build AndroidFastFile
-1234567891011121314151617181920default_platform(:android)platform :android do  desc "Runs all the tests"  lane :test do    gradle(task: "test")  end  desc "Submit a new Beta Build to Crashlytics Beta"  lane :beta
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/12/26/ReactNative-fastlane-Android/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="Ingress"><a href="#Ingress" class="headerlink" title="Ingress"></a>Ingress</h1><p>Ingress 是對 Cluster 中服務的外部存取進行管理的 API 對象，典型的存取方式是 HTTP</p>
+<h2 id="Ingress-Example"><a href="#Ingress-Example" class="headerlink" title="Ingress Example"></a>Ingress Example</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">networking.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Ingress</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">minimal-ingress</span></span><br><span class="line">  <span class="attr">annotations:</span></span><br><span class="line">    <span class="attr">nginx.ingress.kubernetes.io/rewrite-target:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">ingressClassName:</span> <span class="string">nginx-example</span></span><br><span class="line">  <span class="attr">rules:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">http:</span></span><br><span class="line">      <span class="attr">paths:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">path:</span> <span class="string">/testpath</span></span><br><span class="line">        <span class="attr">pathType:</span> <span class="string">Prefix</span></span><br><span class="line">        <span class="attr">backend:</span></span><br><span class="line">          <span class="attr">service:</span></span><br><span class="line">            <span class="attr">name:</span> <span class="string">test</span></span><br><span class="line">            <span class="attr">port:</span></span><br><span class="line">              <span class="attr">number:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p>Ingress 需要指定 <code>apiVersion</code>、<code>kind</code>、 <code>metadata</code>和 <code>spec</code></p>
+<h3 id="Ingress-rules"><a href="#Ingress-rules" class="headerlink" title="Ingress rules"></a>Ingress rules</h3><ul>
+<li>host: Optional - 若沒有設定 host 的話則代表所有 http request, 若是有設定 host 則代表描述的是該 host 的規則</li>
+<li>path 列表 - 每一個 path 可以指向不同 或是同一個 service</li>
+<li>service name 則需要對應到每一個 Service 的名稱</li>
+</ul>
+<h4 id="路徑類型"><a href="#路徑類型" class="headerlink" title="路徑類型"></a>路徑類型</h4><p>Ingress 中的每個路徑都需要有對應的路徑類型（Path Type）</p>
+<p>未明確設定 pathType 的路徑無法通過合法性檢查。目前支援的路徑類型有三種</p>
+<ul>
+<li>ImplementationSpecific： 對於這種路徑類型，匹配方法取決於 IngressClass。具體實作可以將其作為單獨的 pathType 處理或作與 Prefix 或 Exact 類型相同的處理</li>
+<li>Exact：精確匹配 URL 路徑，且區分大小寫</li>
+<li>Prefix：基於以 <code>/</code> 分隔的 URL 路徑前綴匹配。匹配區分大小寫， 並且對路徑中各個元素逐一執行匹配操作。路徑元素指的是由 <code>/</code> 分隔符號分隔的路徑中的標籤清單。如果每個 <em>p</em> 都是請求路徑 <em>p</em> 的元素前綴，則請求與路徑 <em>p</em> 相符。</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Note： 如果路徑的最後一個元素是請求路徑中最後一個元素的子字串，則不會被視為符合</span><br><span class="line">（例如：<span class="regexp">/foo/</span>bar 符合 <span class="regexp">/foo/</span>bar<span class="regexp">/baz, 但不符合 /</span>foo<span class="regexp">/barbaz）</span></span><br></pre></td></tr></table></figure>
+<h4 id="萬用字符號"><a href="#萬用字符號" class="headerlink" title="萬用字符號"></a>萬用字符號</h4><p>主機名稱可以是精確匹配（例如 “foo.bar.com”）或使用通配符來匹配 （例如 “*.foo.com”）</p>
+<p>精確比對要求 HTTP host 頭部欄位與 host 欄位值完全相符</p>
+<p>通配符匹配則要求 HTTP host 頭部欄位與通配符規則中的後綴部分相同 </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">networking.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Ingress</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">ingress-wildcard-host</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">rules:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">host:</span> <span class="string">"foo.bar.com"</span></span><br><span class="line">    <span class="attr">http:</span></span><br><span class="line">      <span class="attr">paths:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">pathType:</span> <span class="string">Prefix</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">"/bar"</span></span><br><span class="line">        <span class="attr">backend:</span></span><br><span class="line">          <span class="attr">service:</span></span><br><span class="line">            <span class="attr">name:</span> <span class="string">service1</span></span><br><span class="line">            <span class="attr">port:</span></span><br><span class="line">              <span class="attr">number:</span> <span class="number">80</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">host:</span> <span class="string">"*.foo.com"</span></span><br><span class="line">    <span class="attr">http:</span></span><br><span class="line">      <span class="attr">paths:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">pathType:</span> <span class="string">Prefix</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">"/foo"</span></span><br><span class="line">        <span class="attr">backend:</span></span><br><span class="line">          <span class="attr">service:</span></span><br><span class="line">            <span class="attr">name:</span> <span class="string">service2</span></span><br><span class="line">            <span class="attr">port:</span></span><br><span class="line">              <span class="attr">number:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/IThome2023鐵人賽/">IThome2023鐵人賽</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IThome2023/">IThome2023</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kubernetes/">Kubernetes</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Day-05-ingress-controller" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/09/20/Day-05-ingress-controller/" class="article-date">
+      <time datetime="2023-09-20T10:01:33.000Z" itemprop="datePublished">2023-09-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/12/React-Native-Fastlane-IOS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/12/React-Native-Fastlane-IOS/" itemprop="url">React-Native-Fastlane-IOS</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/20/Day-05-ingress-controller/">Day-05-ingress-controller</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-10-12T21:16:21+08:00">
-                2020-10-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/10/12/React-Native-Fastlane-IOS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/10/12/React-Native-Fastlane-IOS/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          Setting Up fastlaneInstall Homebrew1234$ /usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"$ brew update &amp;&amp; brew install ruby$ brew link --overwrite ruby
-重新啟動 Terminal
-123456$ sudo gem install bundler$ xcode-select --install$ sudo gem install -n /usr/local/bin fastlane --verbose$ brew cask in
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/12/React-Native-Fastlane-IOS/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="Ingress-Controller"><a href="#Ingress-Controller" class="headerlink" title="Ingress Controller"></a>Ingress Controller</h1><p><code>Ingress</code> 是進入的意思</p>
+<p>在 Kubernetes 中也是代表著進入 Cluster 的流量</p>
+<p><code>Egress</code> 則代表退出 Cluster 的流量</p>
+<p><code>Ingress</code> 是原生的 Kubernetes 的資源</p>
+<p>使用 <code>Ingress</code> 可以維護 DNS routing 設定</p>
+<p>如果沒有使用 Kubernetes Ingress 你需要增加一個 Loadbalancer </p>
+<p><img src="https://devopscube.com/wp-content/uploads/2021/08/image-11.png" alt="image"></p>
+<p>若是使用 <code>Ingress</code> 的話 如下圖</p>
+<p><img src="https://devopscube.com/wp-content/uploads/2021/08/image-14.png" alt="image1"></p>
+<p><code>Note: AWS GCP 雲端 Ingress Controller 的實作略有不同。例如，</code><a href="https://devopscube.com/aws-load-balancers/" target="_blank" rel="noopener">AWS loadbalancer</a> <code>充當入口控制器。</code><a href="https://devopscube.com/setup-ingress-gke-ingress-controller/" target="_blank" rel="noopener">GKE Ingress Setup</a></p>
+<p>在 Kubernetes Ingress 穩定前可以先用 Nginx 或是 HAproxy kubernetes 將流量導入 Cluster</p>
+<h2 id="Kubernetes-Ingress-如何作用"><a href="#Kubernetes-Ingress-如何作用" class="headerlink" title="Kubernetes Ingress 如何作用"></a>Kubernetes Ingress 如何作用</h2><p>主要有兩個概念</p>
+<ol>
+<li><code>Kubernetes Ingress 資源:</code> Kubernetes Ingress 負責 Cluster 中的 DNS Routing 規則</li>
+<li><code>Kubernetes Ingress Controller:</code> Kubernetes 入口控制器（Nginx/HAProxy 等）負責透過存取入口資源應用的 DNS 規則來進行路由</li>
+</ol>
+<p><a href="https://devopscube.com/wp-content/uploads/2021/05/ingress-blog-images.png" target="_blank" rel="noopener">image3</a></p>
+<h2 id="實際範例"><a href="#實際範例" class="headerlink" title="實際範例"></a>實際範例</h2><p>hello-one.yaml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">hello-one</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">ClusterIP</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line">    <span class="attr">targetPort:</span> <span class="number">80</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">hello-one</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">hello-one</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">hello-one</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">hello-one</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">hello-ingress</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">nginxdemos/hello</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p>hello-two.yaml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">hello-two</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">ClusterIP</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line">    <span class="attr">targetPort:</span> <span class="number">80</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">hello-two</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">hello-two</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">hello-two</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">hello-two</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">hello-ingress</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">nginxdemos/hello</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p>my-new-ingress.yaml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">networking.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Ingress</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">my-new-ingress</span></span><br><span class="line">  <span class="attr">annotations:</span></span><br><span class="line">    <span class="attr">kubernetes.io/ingress.class:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">rules:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">host:</span> <span class="string">hello-one.tomas.website</span></span><br><span class="line">    <span class="attr">http:</span></span><br><span class="line">      <span class="attr">paths:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">pathType:</span> <span class="string">Prefix</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">"/"</span></span><br><span class="line">        <span class="attr">backend:</span></span><br><span class="line">          <span class="attr">service:</span></span><br><span class="line">            <span class="attr">name:</span> <span class="string">hello-one</span></span><br><span class="line">            <span class="attr">port:</span></span><br><span class="line">              <span class="attr">number:</span> <span class="number">80</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">host:</span> <span class="string">hello-two.tomas.website</span></span><br><span class="line">    <span class="attr">http:</span></span><br><span class="line">      <span class="attr">paths:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">pathType:</span> <span class="string">Prefix</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">"/"</span></span><br><span class="line">        <span class="attr">backend:</span></span><br><span class="line">          <span class="attr">service:</span></span><br><span class="line">            <span class="attr">name:</span> <span class="string">hello-two</span></span><br><span class="line">            <span class="attr">port:</span></span><br><span class="line">              <span class="attr">number:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p>完成之後可以打開頁面</p>
+<p><a href="http://hello-one.tomas.website/" target="_blank" rel="noopener">hello-one.tomas.website</a></p>
+<p><a href="http://hello-two.tomas.website/" target="_blank" rel="noopener">hello-two.tomas.website</a></p>
+<p>明天再來繼續聊聊 Ingress Controller</p>
+
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/IThome2023鐵人賽/">IThome2023鐵人賽</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IThome2023/">IThome2023</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kubernetes/">Kubernetes</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Day-04-Deploy-to-cluster" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/09/19/Day-04-Deploy-to-cluster/" class="article-date">
+      <time datetime="2023-09-19T12:13:54.000Z" itemprop="datePublished">2023-09-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/09/React-create-rxdb-example/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/09/React-create-rxdb-example/" itemprop="url">React-create-rxdb-example</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/19/Day-04-Deploy-to-cluster/">Day-04-Deploy-to-cluster</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-10-09T18:23:20+08:00">
-                2020-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React/" itemprop="url" rel="index">
-                    <span itemprop="name">React</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/10/09/React-create-rxdb-example/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/10/09/React-create-rxdb-example/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          Install and Initial12$ npx create-react-app rxdbdemo$ npm install --save concurrently moment pouchdb-adapter-http pouchdb-adapter-idb pouchdb-server react-toastify rxdb rxjs serve
-package.json
-1234567891011121314151617181920212223242526272829303132333435363738394041424344&#123;  "name": "rxdbdemo",  "version": "0.1.0",  "private": true,  "dependenc
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/09/React-create-rxdb-example/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="Deploy-to-Cluster-on-LKE"><a href="#Deploy-to-Cluster-on-LKE" class="headerlink" title="Deploy to Cluster on LKE"></a>Deploy to Cluster on LKE</h1><p>建立一個 <code>app</code> 的資料夾</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>mkdir app</span><br><span class="line"><span class="variable">$ </span>mv ./* ./app</span><br><span class="line"><span class="variable">$ </span>mkdir manifests</span><br></pre></td></tr></table></figure>
+<p>建立一個 <code>static-site-deployment.yaml</code> 檔案</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">static-site-deployment</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">static-site</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">3</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">static-site</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">static-site</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">static-site</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">horsekit1982/lke-example:v1.0.0</span></span><br><span class="line">        <span class="attr">imagePullPolicy:</span> <span class="string">Always</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p>Deployments 描述 <code>Pod</code> 和 <code>ReplicaSet</code> </p>
+<p>建立一個名為 <code>static-site-deployment</code> 的 Deployment (以 <code>.metadata.name</code>)</p>
+<p>會以這個名稱為基礎 建立 <code>ReplicaSet</code> 和 <code>Pod</code></p>
+<p>此 Deployment 建立一個 ReplicaSet 會由三個 (<code>.spec.replicas</code>) Pod 副本</p>
+<p><code>.spec.selector</code> 描述了 ReplicaSet 如何尋找要管理的 Pod</p>
+<p>在上面的範例中選擇 Pod 中定義的標籤(app: static-site)</p>
+<p><code>Note: .spec.selector.matchLabels 欄位是 {key,value} 鍵值對映射。在 matchLabels 映射中的每個 {key,value} 映射等效於 matchExpressions 中的一個元素， 即其 key 字段是 “key”，operator 為 “In”，values 數組僅包含 “value”。在 matchLabels 和 matchExpressions 中給出的所有條件都必須滿足才能匹配。</code></p>
+<p><code>template</code> 自斷包含</p>
+<ul>
+<li>Pod 使用 .metadata.labels 欄位打上 app: nginx 標籤</li>
+<li>Pod 範本規約（即 <code>.template.spec 欄位</code>）指示 Pod 執行 static-site 容器</li>
+<li><p>建立容器並使用 <code>.spec.template.spec.containers[0].name</code> 欄位將其命名為 static-site</p>
+<p>建立一個 <code>static-site-service.yaml</code> 檔案</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">static-site-service</span></span><br><span class="line">  <span class="attr">namespace:</span> <span class="string">react-site</span></span><br><span class="line">  <span class="attr">annotations:</span></span><br><span class="line">    <span class="attr">service.beta.kubernetes.io/linode-loadbalancer-throttle:</span> <span class="string">"4"</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">static-site</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">LoadBalancer</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">http</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line">    <span class="attr">protocol:</span> <span class="string">TCP</span></span><br><span class="line">    <span class="attr">targetPort:</span> <span class="number">80</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">static-site</span></span><br><span class="line">  <span class="attr">sessionAffinity:</span> <span class="string">None</span></span><br></pre></td></tr></table></figure>
+<p>Kubernetes 中 Service 的一個關鍵目標是讓你無需修改現有應用程式以使用某種不熟悉的服務發現機制。</p>
+<p>你可以在 Pod 集合中運行程式碼，無論程式碼是為雲端原生環境設計的， 還是被容器化的舊應用程式</p>
+<p>你可以使用 Service 讓一組 Pod 在網路上訪問，這樣客戶端就能與之互動</p>
+<p>上面的範例建立了一個 <code>static-site-service</code> 的服務</p>
+<p>Port 是 80</p>
+<p><code>Note: Service 能夠將任意入站 port 對應到某個 targetPort。預設情況下，出於方便考慮，targetPort 會被設定為與 port 欄位相同的值</code></p>
+<p>也可以有另外一種範例</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Pod</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nginx</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/name:</span> <span class="string">proxy</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">containers:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">nginx</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx:stable</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">containerPort:</span> <span class="number">80</span></span><br><span class="line">        <span class="attr">name:</span> <span class="string">http-web-svc</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">nginx-service</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">app.kubernetes.io/name:</span> <span class="string">proxy</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">name-of-service-port</span></span><br><span class="line">    <span class="attr">protocol:</span> <span class="string">TCP</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">80</span></span><br><span class="line">    <span class="attr">targetPort:</span> <span class="string">http-web-svc</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在上述範例中 targetPort 指定是 <code>http-web-svc</code> 會指定到 <code>Pod</code> 的 port 80</p>
+
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/IThome2023鐵人賽/">IThome2023鐵人賽</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IThome2023/">IThome2023</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kubernetes/">Kubernetes</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Day-03-Static-Site-Container" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/09/18/Day-03-Static-Site-Container/" class="article-date">
+      <time datetime="2023-09-18T10:57:10.000Z" itemprop="datePublished">2023-09-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/07/React-Native-Cache-PartII/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/07/React-Native-Cache-PartII/" itemprop="url">React-Native-Cache-PartII</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/18/Day-03-Static-Site-Container/">Day-03-Container</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-10-07T00:12:46+08:00">
-                2020-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/10/07/React-Native-Cache-PartII/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/10/07/React-Native-Cache-PartII/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          建立雙向鍊表的 Class123456789101112131415161718192021222324252627282930313233343536373839class Node &#123;  constructor(data) &#123;    this.data = data;    this.prev = null;    this.next = null;  &#125;&#125;class DoubleLinklist &#123;  constructor() &#123;    this.head = null;    this.tail = null;    this.length = 0;  &#125;  append(data)&#123;    const
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/07/React-Native-Cache-PartII/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="Create-React-App"><a href="#Create-React-App" class="headerlink" title="Create React App"></a>Create React App</h1><p>是一個自動化建立一個簡單的 React 的工具</p>
+<p>利用這個工具產生一個靜態的檔案</p>
+<p>再利用 docker 打包成 Image </p>
+<p>並且以 container 跑起來 可以利用網頁瀏覽器瀏覽</p>
+<h2 id="Initial-React-Project"><a href="#Initial-React-Project" class="headerlink" title="Initial React Project"></a>Initial React Project</h2><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="string">npx </span><span class="built_in">create-react-app</span> <span class="string">lke-example</span></span><br><span class="line"><span class="string">$</span> <span class="string">cd </span><span class="string">lke-example</span></span><br><span class="line"><span class="string">$</span> <span class="string">npm </span><span class="string">install</span></span><br><span class="line"><span class="string">$</span> <span class="string">npm </span><span class="string">start</span></span><br></pre></td></tr></table></figure>
+<p><img src="../images/react-demo.png" alt="react-demo"></p>
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><p>Dockerfile<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">18.0</span>-slim as Frontend</span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> . /app</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> npm install</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> npm run build</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> nginx:stable-alpine</span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> mv /usr/share/nginx/html/index.html /usr/share/nginx/html/old-index.html</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> --from=Frontend /app/build/ /usr/share/nginx/html/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">80</span></span><br></pre></td></tr></table></figure></p>
+<p>昨天有解釋一些參數</p>
+<p>今天又多了一些新的參數</p>
+<p><code>FROM node:18.0-slim as Frontend</code></p>
+<p>這一個 image 基於 <code>node:18.0-slim</code> 產生後命名為 <code>Frontend</code></p>
+<p><code>COPY --from=Frontend /app/build/ /usr/share/nginx/html/</code></p>
+<p>將 <code>Frontend</code> 的 image 複製 <code>/app/build/</code> 的檔案到 Nginx 的 <code>/usr/share/nginx/html/</code></p>
+<h2 id="Build-Image"><a href="#Build-Image" class="headerlink" title="Build Image"></a>Build Image</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="keyword">build </span>-t lke-example .</span><br></pre></td></tr></table></figure>
+<p>成功後會有多一個 lke-example 的 image</p>
+<h2 id="Run-a-Container-From-lke-example"><a href="#Run-a-Container-From-lke-example" class="headerlink" title="Run a Container From lke-example"></a>Run a Container From lke-example</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="keyword">run</span><span class="bash"> -p 8080:80 -d lke-example</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://localhost:8080" target="_blank" rel="noopener">localhost</a></p>
+<p>這時候就可以看到頁面</p>
+<h2 id="Push-到-Docker-Hub"><a href="#Push-到-Docker-Hub" class="headerlink" title="Push 到 Docker Hub"></a>Push 到 Docker Hub</h2><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>docker login <span class="comment"># 登入</span></span><br><span class="line"><span class="variable">$ </span>docker push lke-example <span class="comment">## 這時候可能會錯誤</span></span><br></pre></td></tr></table></figure>
+<h3 id="Trouble-shotting"><a href="#Trouble-shotting" class="headerlink" title="Trouble shotting"></a>Trouble shotting</h3><p><code>denied: requested access to the resource is denied</code></p>
+<p>如果看到這個錯誤</p>
+<p>要給予這個 image 一個 tag</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="keyword">tag</span> <span class="title">lke-example</span> $&#123;docker hub name&#125;/lke-example:v1.<span class="number">0.0</span></span><br></pre></td></tr></table></figure>
+<p>之後再做 push 就可以了</p>
+<p>推上去之後</p>
+<p>明天再來處理 deploy 到 k8s 上</p>
+
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/IThome2023鐵人賽/">IThome2023鐵人賽</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IThome2023/">IThome2023</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kubernetes/">Kubernetes</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Day-02-Express與Docker" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/09/15/Day-02-Express與Docker/" class="article-date">
+      <time datetime="2023-09-15T09:09:21.000Z" itemprop="datePublished">2023-09-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/07/React-Native-Cache-PartI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/07/React-Native-Cache-PartI/" itemprop="url">React Native Cache PartI</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/15/Day-02-Express與Docker/">Day-02-Express與Docker</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-10-07T00:10:35+08:00">
-                2020-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/10/07/React-Native-Cache-PartI/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/10/07/React-Native-Cache-PartI/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          LRU CacheCache 是兩個存取速度差異的硬體
-同步兩者資料的架構
-LRU  是 Least Recently Used 的縮寫
-表示最近較少使用的會優先被替換掉
-實作邏輯LRU 快取是一個固定容量的 map
-如果快取是滿的時候
-仍需要插入一個新的元素
-找出最近最少使用的元素來替換
-而不會增加 Cache 的容量大小
+        <h1 id="Express-Hello-world"><a href="#Express-Hello-world" class="headerlink" title="Express Hello world"></a>Express Hello world</h1><p><a href="https://expressjs.com/" target="_blank" rel="noopener">Express 4.x</a></p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> express --<span class="keyword">no</span>-view helloworlddemo</span><br><span class="line"><span class="symbol">$</span> cd helloworlddemo</span><br><span class="line"><span class="symbol">$</span> npm install</span><br><span class="line"><span class="symbol">$</span> npm start</span><br></pre></td></tr></table></figure>
+<h2 id="檔案結構"><a href="#檔案結構" class="headerlink" title="檔案結構"></a>檔案結構</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── <span class="selector-tag">app</span><span class="selector-class">.js</span></span><br><span class="line">├── <span class="selector-tag">bin</span></span><br><span class="line">│   └── <span class="selector-tag">www</span></span><br><span class="line">├── <span class="selector-tag">package-lock</span><span class="selector-class">.json</span></span><br><span class="line">├── <span class="selector-tag">package</span><span class="selector-class">.json</span></span><br><span class="line">├── <span class="selector-tag">public</span></span><br><span class="line">│   ├── <span class="selector-tag">images</span></span><br><span class="line">│   ├── <span class="selector-tag">index</span><span class="selector-class">.html</span></span><br><span class="line">│   ├── <span class="selector-tag">javascripts</span></span><br><span class="line">│   └── <span class="selector-tag">stylesheets</span></span><br><span class="line">│       └── <span class="selector-tag">style</span><span class="selector-class">.css</span></span><br><span class="line">└── <span class="selector-tag">routes</span></span><br><span class="line">    ├── <span class="selector-tag">index</span><span class="selector-class">.js</span></span><br><span class="line">    └── <span class="selector-tag">users</span><span class="selector-class">.js</span></span><br></pre></td></tr></table></figure>
+<p>以這個範例實作 <code>Dockerfile</code></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:<span class="number">18.0</span>-slim</span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /app</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> . .</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> npm install</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">3000</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"node"</span>, <span class="string">"app.js"</span>]</span></span><br></pre></td></tr></table></figure>
+<p><strong>FROM</strong></p>
+<p>宣告基本的 Docker Image 環境</p>
+<p><a href="https://hub.docker.com/layers/library/node/18-slim/images/sha256-ddb3a1b4a81ee454c147b0e9f87baa9eee8468c11ed5fca1c33204f73d48f1ef" target="_blank" rel="noopener">node:18.0-slim 詳情</a></p>
+<p>以 <code>Debian:11-slim</code> 為基礎 <code>Nodejs 版本</code> 為 <code>18</code> 的環境</p>
+<p><strong>WORKDIR</strong></p>
+<p>設定工作的資料夾位置</p>
+<p><strong>COPY</strong></p>
+<p>將檔案複製到 Docker Image 內的 <code>WORKDIR</code> 資料夾內</p>
+<p><code>COPY SOURCE TARGET</code></p>
+<p><em>Note: COPY和ADD二個的功用都一樣，就是將檔案複製進去image裡，COPY只能複製本機端的檔案或目錄，ADD能增加遠端url的檔案到docker image，ADD能順手將本機端複製進去的tar檔解開(遠端的tar不行！)。在實例上並不建議使用ADD來抓取網路上的檔案，會使用RUN curl or wget的方式。原因是使用一次ADD指令會增加docker image layers一次，原則上layers越多，docker image size就會越大！</em></p>
+<p><strong>RUN</strong></p>
+<p>建立image內部再跑的指令，是跑在Linux裡面的，跟ENTRYPOING與CMD最大的不同就是，他不是作為Image的「啟動指令」，而是作為image的「建造指令」</p>
+<p><strong>EXPOSE</strong></p>
+<p>很多人以為加上EXPOSE 3000，docker run起來後，就可以從本機端連得到container的 3000 port。</p>
+<p>EXPOSE概念上比較像是在告訴使用這個image的人，服務是在那個port。</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>docker pull nginx</span><br><span class="line"><span class="variable">$ </span>docker inspect nginx</span><br><span class="line"><span class="variable">$ </span>docker run -p <span class="number">8888:3000</span> -d nginx</span><br></pre></td></tr></table></figure>
+<p><strong>CMD</strong></p>
+<p>在 Container 運行的時候 執行此命令</p>
+<p><em><code>Note</code>: ENTRYPOINT是Dockerfile 定義的一個指令，他的作用類似於CMD，都是在container 啟動時會自動執行的指令，你可以不定義CMD，然後改成定義ENTRYPOINT，你的container 照樣能夠啟動，如同你之前將命令寫在CMD 一樣</em></p>
 
-需要一個類似hashmap 的架構
-一種將所有元素按照訪問順徐來儲存，有效率的移動元素可以藉由雙向連結
-
-需要有兩個操作
-
-#.set
-#.get
-
-可以參考 lru github
-1234567891011121314151617181920212223const LRU = require('lru');const cache = new LRU(2),    e
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/07/React-Native-Cache-PartI/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/IThome2023鐵人賽/">IThome2023鐵人賽</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IThome2023/">IThome2023</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kubernetes/">Kubernetes</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-Day-01-Docker簡介" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2023/09/15/Day-01-Docker簡介/" class="article-date">
+      <time datetime="2023-09-15T02:10:43.000Z" itemprop="datePublished">2023-09-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/04/React-Native-Notification-Android/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/04/React-Native-Notification-Android/" itemprop="url">React-Native-Notification-Android</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/09/15/Day-01-Docker簡介/">Day-01-Docker簡介</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-10-04T21:27:22+08:00">
-                2020-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/10/04/React-Native-Notification-Android/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/10/04/React-Native-Notification-Android/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          AndroidInitial React Native App1$ react-native init rn_notification
-Install1$ yarn add @react-native-firebase/app @react-native-firebase/messaging
-FirebaseDownload GoogleService-Info.plist
-configure Android
-index.js12345678910111213141516171819202122232425import &#123;AppRegistry&#125; from 'react-native';import App from './App';import &#123;name a
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/04/React-Native-Notification-Android/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h1><p>Docker 大致上可以分為 <code>Image</code>, <code>Container</code>, <code>Registry</code> 三個基本概念</p>
+<ul>
+<li>Image - 是一個唯讀的完整操作系統環境，裡面僅僅安裝了必要的應用程序和支援程式． 它是一個模板</li>
+<li>Container - 容器，鏡像運行時的實體，可以用一個image去啟動多個container，這些container是獨立的，互相不會干涉，我們對任何一個container做的改變，只會對那個container造成影響。</li>
+<li>Registry - 如果是熟悉Git的，其實這裡說的Registry就是Git所說的Repository，只是跟Git repository不同的，Git repository是存放原始碼的，但是Docker registry是存放Docker images的．Docker跟Git的指令也有相似之處，譬如說push和pull，可以把 images 從Docker registry上傳或下載，概念是這樣，先有個大概的認識，之後就可以慢慢來實作了。</li>
+</ul>
+<p><a href="https://zh.wikipedia.org/zh-tw/Docker" target="_blank" rel="noopener">Docker Wiki</a></p>
+<p>過往在做部署的時候總是一台 機器會架設多個服務，</p>
+<p>服務之間的環境設定 或是套件 服務的版本會有所衝突</p>
+<p>常常造成一些奇怪的問題</p>
+<p>Docker 可以將環境單純化</p>
+<p>盡量降低因為環境因素影響服務運行</p>
+
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/IThome2023鐵人賽/">IThome2023鐵人賽</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IThome2023/">IThome2023</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kubernetes/">Kubernetes</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-ReactNative-fastlane-Android" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/12/26/ReactNative-fastlane-Android/" class="article-date">
+      <time datetime="2020-12-25T18:19:46.000Z" itemprop="datePublished">2020-12-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/04/React-Native-Notification-IOS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/04/React-Native-Notification-IOS/" itemprop="url">React-Native-Notification-IOS</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/26/ReactNative-fastlane-Android/">React Native-fastlane-Android</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-10-04T19:52:17+08:00">
-                2020-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/React-Native/" itemprop="url" rel="index">
-                    <span itemprop="name">React Native</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/10/04/React-Native-Notification-IOS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/10/04/React-Native-Notification-IOS/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          IOSInitial React Native App1$ react-native init rn_notification
-Install12$ yarn add @react-native-firebase/app @react-native-firebase/messaging$ cd ios &amp;&amp; pod install &amp;&amp; cd ..
-FirebaseDownload GoogleService-Info.plist
-podFile12345require_relative '../node_modules/react-native/scripts/react_native_pods'require_relative '../node_modul
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/10/04/React-Native-Notification-IOS/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="Fastlane-Install"><a href="#Fastlane-Install" class="headerlink" title="Fastlane Install"></a>Fastlane Install</h1><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ bundle<span class="built_in"> config </span><span class="builtin-name">set</span> path <span class="string">'vendor/bundle'</span></span><br><span class="line">$ cd android</span><br><span class="line">$ bundle install</span><br><span class="line">$ bundle exec fastlane init</span><br></pre></td></tr></table></figure>
+<h2 id="Build-Android"><a href="#Build-Android" class="headerlink" title="Build Android"></a>Build Android</h2><p>FastFile</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">default_platform(<span class="symbol">:android</span>)</span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:android</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">"Runs all the tests"</span></span><br><span class="line">  lane <span class="symbol">:test</span> <span class="keyword">do</span></span><br><span class="line">    gradle(<span class="symbol">task:</span> <span class="string">"test"</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">"Submit a new Beta Build to Crashlytics Beta"</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    gradle(<span class="symbol">task:</span> <span class="string">"clean assembleRelease"</span>)</span><br><span class="line">    <span class="comment"># crashlytics</span></span><br><span class="line">    gradle(</span><br><span class="line">      <span class="symbol">task:</span> <span class="string">'assemble'</span>,</span><br><span class="line">      <span class="symbol">build_type:</span> <span class="string">'Release'</span></span><br><span class="line">    )</span><br><span class="line">    <span class="comment"># sh "your_script.sh"</span></span><br><span class="line">    <span class="comment"># You can also use other beta testing services here</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>可能會有錯誤 <code>Expiring Daemon because JVM heap space is exhausted</code></p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>~/.gradle/gradle.properties</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">org.gradle.<span class="attribute">daemon</span>=<span class="literal">true</span></span><br><span class="line">org.gradle.<span class="attribute">configureondemand</span>=<span class="literal">true</span></span><br><span class="line">org.gradle.<span class="attribute">jvmargs</span>=-Xmx4g -XX:<span class="attribute">MaxPermSize</span>=2048m -XX:+HeapDumpOnOutOfMemoryError -Dfile.<span class="attribute">encoding</span>=UTF-8</span><br></pre></td></tr></table></figure>
+<p>./android/app/build.gradle</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="class">android </span>&#123;</span><br><span class="line">    <span class="class">dexOptions </span>&#123;</span><br><span class="line">       javaMaxHeapSize <span class="string">"3g"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="Distribution-with-firebase"><a href="#Distribution-with-firebase" class="headerlink" title="Distribution with firebase"></a>Distribution with firebase</h2><h3 id="install-plugin"><a href="#install-plugin" class="headerlink" title="install plugin"></a>install plugin</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">bundle </span>exec fastlane <span class="keyword">add_plugin </span>firebase_app_distribution</span><br></pre></td></tr></table></figure>
+<h3 id="login"><a href="#login" class="headerlink" title="login"></a>login</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bundle exec fastlane <span class="keyword">run</span><span class="bash"> firebase_app_distribution_login</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改-Fastfile"><a href="#修改-Fastfile" class="headerlink" title="修改 Fastfile"></a>修改 Fastfile</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">default_platform(<span class="symbol">:android</span>)</span><br><span class="line"></span><br><span class="line">platform <span class="symbol">:android</span> <span class="keyword">do</span></span><br><span class="line">  desc <span class="string">"Runs all the tests"</span></span><br><span class="line">  lane <span class="symbol">:test</span> <span class="keyword">do</span></span><br><span class="line">    gradle(<span class="symbol">task:</span> <span class="string">"test"</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  desc <span class="string">"Submit a new Beta Build to Crashlytics Beta"</span></span><br><span class="line">  lane <span class="symbol">:beta</span> <span class="keyword">do</span></span><br><span class="line">    gradle(<span class="symbol">task:</span> <span class="string">"clean assembleRelease"</span>)</span><br><span class="line">    <span class="comment"># crashlytics</span></span><br><span class="line">    gradle(</span><br><span class="line">      <span class="symbol">task:</span> <span class="string">'assemble'</span>,</span><br><span class="line">      <span class="symbol">build_type:</span> <span class="string">'Release'</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    firebase_app_distribution(</span><br><span class="line">      <span class="symbol">app:</span> <span class="string">"firebase app project id"</span>,</span><br><span class="line">      <span class="symbol">groups:</span> <span class="string">"firebase test groups"</span></span><br><span class="line">    )</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> bundle exec fastlane <span class="built-in">beta</span></span><br></pre></td></tr></table></figure>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><p><a href="https://stackoverflow.com/questions/56075455/expiring-daemon-because-jvm-heap-space-is-exhausted" target="_blank" rel="noopener">Expiring Daemon because JVM heap space is exhausted
+</a></p>
+
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/React-Native/">React Native</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-React-Native-Fastlane-IOS" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/10/12/React-Native-Fastlane-IOS/" class="article-date">
+      <time datetime="2020-10-12T13:16:21.000Z" itemprop="datePublished">2020-10-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/22/Socketcluster-client-AuthorizationEngine/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/22/Socketcluster-client-AuthorizationEngine/" itemprop="url">Socketcluster-client-AuthorizationEngine</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/12/React-Native-Fastlane-IOS/">React-Native-Fastlane-IOS</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-09-22T17:45:10+08:00">
-                2020-09-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">Nodejs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/09/22/Socketcluster-client-AuthorizationEngine/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/09/22/Socketcluster-client-AuthorizationEngine/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          需求處理 JWT 的時候如果在瀏覽器可以將 token 存在 localStorage 中的 socketcluster.authToken
-但是如果在 React Native 中沒有 localStorage 的模組
-可以使用 jest-localstorage-mock
-來處理這個問題
-但是這樣很醜
-希望可以自己控制 Authorization 流程
-所以去爬了一下 source code
-資訊在參考資料
-這部分文件沒有寫得很清楚
-所以花了一個篇幅來記錄一下如何客製化 Authorization
-Serverserver.js
-在 agOptions 中加入 authKey: SCC_AUTH_KEY
-這時候就會把這個參數帶入 agServer.signatureKey
-所有對外的服務
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/09/22/Socketcluster-client-AuthorizationEngine/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="Setting-Up-fastlane"><a href="#Setting-Up-fastlane" class="headerlink" title="Setting Up fastlane"></a>Setting Up fastlane</h1><h2 id="Install-Homebrew"><a href="#Install-Homebrew" class="headerlink" title="Install Homebrew"></a>Install Homebrew</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/<span class="keyword">bin/ruby </span>-e \</span><br><span class="line"><span class="string">"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></span><br><span class="line">$ <span class="keyword">brew </span>update &amp;&amp; <span class="keyword">brew </span>install ruby</span><br><span class="line">$ <span class="keyword">brew </span>link --overwrite ruby</span><br></pre></td></tr></table></figure>
+<p>重新啟動 Terminal</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem <span class="keyword">install</span> bundler</span><br><span class="line">$ xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br><span class="line">$ sudo gem <span class="keyword">install</span> -n /usr/<span class="keyword">local</span>/<span class="keyword">bin</span> fastlane <span class="comment">--verbose</span></span><br><span class="line">$ brew cask <span class="keyword">install</span> fastlane</span><br><span class="line">$ npx react-<span class="keyword">native</span> init rndemo</span><br><span class="line">$ cd rndemo/ios</span><br></pre></td></tr></table></figure>
+<p>add to <code>.zshrc</code></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">LC_ALL</span>=en_US.UTF-8</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">LANG</span>=en_US.UTF-8</span><br></pre></td></tr></table></figure>
+<p><strong>Gemfile</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source &quot;https://rubygems.org&quot;</span><br><span class="line"></span><br><span class="line">gem &quot;fastlane&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gem <span class="keyword">install </span><span class="keyword">bundler</span></span><br><span class="line"><span class="keyword">$ </span><span class="keyword">bundle </span>exec fastlane init</span><br></pre></td></tr></table></figure>
+<p><a href="https://docs.fastlane.tools/getting-started/ios/screenshots/" target="_blank" rel="noopener">screenshots</a></p>
+<p><a href="https://docs.fastlane.tools/getting-started/ios/beta-deployment/" target="_blank" rel="noopener">distribution to beta testing services</a></p>
+<p><a href="https://docs.fastlane.tools/getting-started/ios/appstore-deployment/" target="_blank" rel="noopener">automate the App Store release process</a></p>
+<p><a href="https://docs.fastlane.tools/codesigning/getting-started/" target="_blank" rel="noopener">setup code signing with fastlane</a></p>
+<p>依據上述的 tutorial 就可以完成相對應的工作</p>
+
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/React-Native/">React Native</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-React-create-rxdb-example" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/10/09/React-create-rxdb-example/" class="article-date">
+      <time datetime="2020-10-09T10:23:20.000Z" itemprop="datePublished">2020-10-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/21/SocketCluster-scc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/21/SocketCluster-scc/" itemprop="url">SocketCluster-scc</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/09/React-create-rxdb-example/">React-create-rxdb-example</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-09-21T21:49:15+08:00">
-                2020-09-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">Nodejs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/09/21/SocketCluster-scc/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/09/21/SocketCluster-scc/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          SCC GuideSCC 是服務的集合
-讓你可以快速的將 SocketCluster 快速的部屬到多台機器上
-讓彼此可以任意溝通
-並且可以利用 Kubernetes  上面優化運行
-SCC 基本上可以分成幾個服務
+        <h1 id="Install-and-Initial"><a href="#Install-and-Initial" class="headerlink" title="Install and Initial"></a>Install and Initial</h1><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="string">npx </span><span class="built_in">create-react-app</span> <span class="string">rxdbdemo</span></span><br><span class="line"><span class="string">$</span> <span class="string">npm </span><span class="string">install </span><span class="built_in">--save</span> <span class="string">concurrently </span><span class="string">moment </span><span class="string">pouchdb-adapter-</span><span class="string">http </span><span class="string">pouchdb-adapter-</span><span class="string">idb </span><span class="string">pouchdb-server </span><span class="string">react-toastify </span><span class="string">rxdb </span><span class="string">rxjs </span><span class="string">serve</span></span><br></pre></td></tr></table></figure>
+<p><strong>package.json</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"rxdbdemo"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"0.1.0"</span>,</span><br><span class="line">  <span class="attr">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"@testing-library/jest-dom"</span>: <span class="string">"^4.2.4"</span>,</span><br><span class="line">    <span class="attr">"@testing-library/react"</span>: <span class="string">"^9.3.2"</span>,</span><br><span class="line">    <span class="attr">"@testing-library/user-event"</span>: <span class="string">"^7.1.2"</span>,</span><br><span class="line">    <span class="attr">"concurrently"</span>: <span class="string">"^5.3.0"</span>,</span><br><span class="line">    <span class="attr">"moment"</span>: <span class="string">"^2.29.1"</span>,</span><br><span class="line">    <span class="attr">"pouchdb-adapter-http"</span>: <span class="string">"^7.2.2"</span>,</span><br><span class="line">    <span class="attr">"pouchdb-adapter-idb"</span>: <span class="string">"^7.2.2"</span>,</span><br><span class="line">    <span class="attr">"pouchdb-server"</span>: <span class="string">"^4.2.0"</span>,</span><br><span class="line">    <span class="attr">"react"</span>: <span class="string">"^16.13.1"</span>,</span><br><span class="line">    <span class="attr">"react-dom"</span>: <span class="string">"^16.13.1"</span>,</span><br><span class="line">    <span class="attr">"react-scripts"</span>: <span class="string">"3.4.3"</span>,</span><br><span class="line">    <span class="attr">"react-toastify"</span>: <span class="string">"^6.0.9"</span>,</span><br><span class="line">    <span class="attr">"rxdb"</span>: <span class="string">"^9.6.0"</span>,</span><br><span class="line">    <span class="attr">"rxjs"</span>: <span class="string">"^6.6.3"</span>,</span><br><span class="line">    <span class="attr">"serve"</span>: <span class="string">"^11.3.2"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"concurrently \"npm run server\" \"react-scripts start\""</span>,</span><br><span class="line">    <span class="attr">"server"</span>: <span class="string">"pouchdb-server -d ./db"</span>,</span><br><span class="line">    <span class="attr">"build"</span>: <span class="string">"react-scripts build"</span>,</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"react-scripts test"</span>,</span><br><span class="line">    <span class="attr">"eject"</span>: <span class="string">"react-scripts eject"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"eslintConfig"</span>: &#123;</span><br><span class="line">    <span class="attr">"extends"</span>: <span class="string">"react-app"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"browserslist"</span>: &#123;</span><br><span class="line">    <span class="attr">"production"</span>: [</span><br><span class="line">      <span class="string">"&gt;0.2%"</span>,</span><br><span class="line">      <span class="string">"not dead"</span>,</span><br><span class="line">      <span class="string">"not op_mini all"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"development"</span>: [</span><br><span class="line">      <span class="string">"last 1 chrome version"</span>,</span><br><span class="line">      <span class="string">"last 1 firefox version"</span>,</span><br><span class="line">      <span class="string">"last 1 safari version"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn <span class="literal">start</span></span><br></pre></td></tr></table></figure>
+<p>會開啟一個本地的 db</p>
+<p>可以透過 <a href="http://localhost:5984/_utils/" target="_blank" rel="noopener">pounch-db</a></p>
+<h1 id="Create-Schema"><a href="#Create-Schema" class="headerlink" title="Create Schema"></a>Create Schema</h1><p><strong>src/Schema.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> schema = &#123;</span><br><span class="line">  title: <span class="string">'Anonymous chat schema'</span>,</span><br><span class="line">  description: <span class="string">'Database schema for an anonymous chat'</span>,</span><br><span class="line">  version: <span class="number">0</span>,</span><br><span class="line">  type: <span class="string">'object'</span>,</span><br><span class="line">  properties: &#123;</span><br><span class="line">    id: &#123;</span><br><span class="line">      type: <span class="string">'string'</span>,</span><br><span class="line">      primary: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    message: &#123;</span><br><span class="line">      type: <span class="string">'string'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  required: [<span class="string">'message'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> schema;</span><br></pre></td></tr></table></figure>
+<h3 id="App-js"><a href="#App-js" class="headerlink" title="App.js"></a>App.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useEffect, useRef, useState &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> logo <span class="keyword">from</span> <span class="string">"./logo.svg"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">"./App.css"</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'react-toastify/dist/ReactToastify.css'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ToastContainer, toast &#125; <span class="keyword">from</span> <span class="string">"react-toastify"</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> moment <span class="keyword">from</span> <span class="string">"moment"</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> RxDB <span class="keyword">from</span> <span class="string">"rxdb"</span>;</span><br><span class="line"><span class="keyword">import</span> schema <span class="keyword">from</span> <span class="string">"./Schema"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> localdb = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> dbName = <span class="string">"test"</span>;</span><br><span class="line"><span class="keyword">const</span> syncURL = <span class="string">"http://localhost:5984/"</span>;</span><br><span class="line"></span><br><span class="line">RxDB.addRxPlugin(<span class="built_in">require</span>(<span class="string">"pouchdb-adapter-idb"</span>));</span><br><span class="line">RxDB.addRxPlugin(<span class="built_in">require</span>(<span class="string">"pouchdb-adapter-http"</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> createDatabase = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> db = <span class="keyword">await</span> RxDB.createRxDatabase(&#123;</span><br><span class="line">      name: dbName,</span><br><span class="line">      adapter: <span class="string">"idb"</span>,</span><br><span class="line">      password: <span class="string">"12345678"</span>,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    db.waitForLeadership().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">document</span>.title = <span class="string">"♛ "</span> + <span class="built_in">document</span>.title;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> messagesCollection = <span class="keyword">await</span> db.collection(&#123;</span><br><span class="line">      name: <span class="string">"messages"</span>,</span><br><span class="line">      schema: schema,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    messagesCollection.sync(&#123; <span class="attr">remote</span>: syncURL + dbName + <span class="string">"/"</span> &#125;);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"createDatabase -&gt; messagesCollection"</span>, messagesCollection);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> db;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"createDatabase -&gt; error"</span>, error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> addMessage = <span class="keyword">async</span> (message, setNewMessage) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"addMessage -&gt; localdb"</span>, localdb)</span><br><span class="line">  <span class="keyword">const</span> id = <span class="built_in">Date</span>.now().toString();</span><br><span class="line">  <span class="keyword">const</span> newMessage = &#123; id, message &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">await</span> localdb.messages.insert(newMessage);</span><br><span class="line"></span><br><span class="line">  setNewMessage(<span class="string">""</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> renderMessages = <span class="function">(<span class="params">messages</span>) =&gt;</span></span><br><span class="line">  messages.map(<span class="function">(<span class="params">&#123; id, message &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> date = moment(id, <span class="string">'x'</span>).fromNow();</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div key=&#123;id&#125;&gt;</span><br><span class="line">        &lt;p&gt;&#123;date&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;message&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;hr /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;);</span></span><br><span class="line"><span class="regexp">function App() &#123;</span></span><br><span class="line"><span class="regexp">  let dbRef = useRef(null);</span></span><br><span class="line"><span class="regexp">  const [messages, setMessages] = useState([]);</span></span><br><span class="line"><span class="regexp">  const [subs, setSubs] = useState([]);</span></span><br><span class="line"><span class="regexp">  const [newMessage, setNewMessage] = useState("");</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">  useEffect(() =&gt; &#123;</span></span><br><span class="line"><span class="regexp">    createDatabase().then((db) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">      localdb = db;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      const sub = db.messages</span></span><br><span class="line"><span class="regexp">        .find()</span></span><br><span class="line"><span class="regexp">        .sort(&#123; id: 1 &#125;)</span></span><br><span class="line"><span class="regexp">        .$.subscribe((msgs) =&gt; &#123;</span></span><br><span class="line"><span class="regexp">          if (!msgs) return;</span></span><br><span class="line"><span class="regexp">          toast("Reloading messages");</span></span><br><span class="line"><span class="regexp">          setMessages(msgs);</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">      setSubs([...subs, sub]);</span></span><br><span class="line"><span class="regexp">    &#125;);</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    return () =&gt; &#123;</span></span><br><span class="line"><span class="regexp">      subs.forEach((sub) =&gt; sub.unsubscribe());</span></span><br><span class="line"><span class="regexp">    &#125;;</span></span><br><span class="line"><span class="regexp">  &#125;, []);</span></span><br><span class="line"><span class="regexp">  return (</span></span><br><span class="line"><span class="regexp">    &lt;div className="App"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;ToastContainer autoClose=&#123;3000&#125; /</span>&gt;</span><br><span class="line">      &lt;header className=<span class="string">"App-header"</span>&gt;</span><br><span class="line">        &lt;img src=&#123;logo&#125; className=<span class="string">"App-logo"</span> alt=<span class="string">"logo"</span> /&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">          Edit &lt;code&gt;src/App.js&lt;<span class="regexp">/code&gt; and save to reload.</span></span><br><span class="line"><span class="regexp">        &lt;/</span>p&gt;</span><br><span class="line">        &lt;a</span><br><span class="line">          className=<span class="string">"App-link"</span></span><br><span class="line">          href=<span class="string">"https://reactjs.org"</span></span><br><span class="line">          target=<span class="string">"_blank"</span></span><br><span class="line">          rel=<span class="string">"noopener noreferrer"</span></span><br><span class="line">        &gt;</span><br><span class="line">          Learn React</span><br><span class="line">        &lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>header&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div&gt;&#123;renderMessages(messages)&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      &lt;div id="add-message-div"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;h3&gt;Add Message&lt;/</span>h3&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">"text"</span></span><br><span class="line">          placeholder=<span class="string">"Message"</span></span><br><span class="line">          value=&#123;newMessage&#125;</span><br><span class="line">          onChange=&#123;(env) =&gt; setNewMessage(env.target.value)&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;button onClick=&#123;() =&gt; addMessage(newMessage, setNewMessage)&#125;&gt;</span><br><span class="line">          Add message</span><br><span class="line">        &lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
 
-scc-worker (SocketCluster) https://github.com/SocketCluster/socketcluster
-scc-broker https://github.com/SocketCluster/scc-broker
-scc-state https://github.com/SocketCluster/scc-state
-scc-ingress (Kubernetes only)
-
-Scc-worker可以建立多個數量的 service 必
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/09/21/SocketCluster-scc/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/React/">React</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
+</article>
 
 
+
+
+
+
+
+
+
+  
+    <article id="post-React-Native-Cache-PartII" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/10/07/React-Native-Cache-PartII/" class="article-date">
+      <time datetime="2020-10-06T16:12:46.000Z" itemprop="datePublished">2020-10-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/21/SocketCluster-Storage/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
+      <input type="hidden" class="isFancy" />
     
-      <header class="post-header">
-
+    
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/21/SocketCluster-Storage/" itemprop="url">SociekCluster-Storage</a></h1>
-        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/07/React-Native-Cache-PartII/">React-Native-Cache-PartII</a>
+    </h1>
+  
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2020-09-21T16:57:09+08:00">
-                2020-09-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">Nodejs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/09/21/SocketCluster-Storage/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2020/09/21/SocketCluster-Storage/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
+    
+    <div class="article-entry" itemprop="articleBody">
       
-
-      
-        
           
-          Mongodb以 Mongodb 為範例
-1234$ git clone git@github.com:SocketCluster/scc-broker.git scc-mongo-broker &amp;&amp; cd scc-mongo-broker$ yarn install$ yarn add mongoose dotenv$ mkdir models
-models/tankModel.js
-123456789101112131415161718const mongoose = require('mongoose');const &#123; Schema &#125; = mongoose;const schema = new mongoose.Schema(&#123; nam
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/09/21/SocketCluster-Storage/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="建立雙向鍊表的-Class"><a href="#建立雙向鍊表的-Class" class="headerlink" title="建立雙向鍊表的 Class"></a>建立雙向鍊表的 Class</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(data) &#123;</span><br><span class="line">    <span class="keyword">this</span>.data = data;</span><br><span class="line">    <span class="keyword">this</span>.prev = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubleLinklist</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.length = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  append(data)&#123;</span><br><span class="line">    <span class="keyword">const</span> newNode = <span class="keyword">new</span> Node(data);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this.length'</span>, <span class="keyword">this</span>.length);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this'</span>, <span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.tail = newNode;</span><br><span class="line">      <span class="keyword">this</span>.head = newNode;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      newNode.prev = <span class="keyword">this</span>.tail;</span><br><span class="line">      <span class="keyword">this</span>.tail.next = newNode;</span><br><span class="line">      <span class="keyword">this</span>.tail = newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.length += <span class="number">1</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> list = <span class="keyword">new</span> DoubleLinklist();</span><br><span class="line"></span><br><span class="line">list.append(<span class="string">'aaa'</span>);</span><br><span class="line">list.append(<span class="string">'bbb'</span>);</span><br><span class="line">list.append(<span class="string">'ccc'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(list);</span><br></pre></td></tr></table></figure>
+<h2 id="情境一"><a href="#情境一" class="headerlink" title="情境一"></a>情境一</h2><p><img src="https://gitee.com/ahuntsun/BlogImgs/raw/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/2.png" alt="image"></p>
+<h2 id="情境二"><a href="#情境二" class="headerlink" title="情境二"></a>情境二</h2><p><img src="https://gitee.com/ahuntsun/BlogImgs/raw/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/3.png" alt="image"></p>
+<p><img src="https://gitee.com/ahuntsun/BlogImgs/raw/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/4.png" alt="image"></p>
+<p><strong>結果</strong></p>
+<ul>
+<li>next</li>
+</ul>
+<p><img src="https://gitee.com/ahuntsun/BlogImgs/raw/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/5.png" alt="image"></p>
+<ul>
+<li>prev</li>
+</ul>
+<p><img src="https://gitee.com/ahuntsun/BlogImgs/raw/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/6.png" alt="image"></p>
+<h2 id="完整範例"><a href="#完整範例" class="headerlink" title="完整範例"></a>完整範例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(data) &#123;</span><br><span class="line">    <span class="keyword">this</span>.data = data;</span><br><span class="line">    <span class="keyword">this</span>.prev = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DoubleLinklist</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.length = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.backwardString();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  forwardString() &#123;</span><br><span class="line">    <span class="keyword">let</span> current =<span class="keyword">this</span>.tail;</span><br><span class="line">    <span class="keyword">let</span> resultString = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (current) &#123;</span><br><span class="line">      resultString += current.data + <span class="string">"--"</span>;</span><br><span class="line">      current = current.prev;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resultString;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  backwardString() &#123;</span><br><span class="line">    <span class="keyword">let</span> current = <span class="keyword">this</span>.head;</span><br><span class="line">    <span class="keyword">let</span> resultString = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (current) &#123;</span><br><span class="line">      resultString += current.data + <span class="string">"--"</span>;</span><br><span class="line">      current = current.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resultString;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  indexOf(data)&#123;</span><br><span class="line">    <span class="keyword">let</span> current = <span class="keyword">this</span>.head;</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(current)&#123;</span><br><span class="line">      <span class="keyword">if</span> (current.data == data) &#123;</span><br><span class="line">        <span class="keyword">return</span> index;</span><br><span class="line">      &#125;</span><br><span class="line">      current = current.next;</span><br><span class="line">      index += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">  &#125; </span><br><span class="line"></span><br><span class="line">  removeAt(position)&#123;</span><br><span class="line">    <span class="keyword">if</span> (position &lt; <span class="number">0</span> || position &gt;= <span class="keyword">this</span>.length) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> current = <span class="keyword">this</span>.head;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.length == <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (position == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.head.next.prev = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">this</span>.head = <span class="keyword">this</span>.head.next;</span><br><span class="line"></span><br><span class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span>(position == <span class="keyword">this</span>.length - <span class="number">1</span>)&#123;</span><br><span class="line">        current = <span class="keyword">this</span>.tail;</span><br><span class="line">        <span class="keyword">this</span>.tail.prev.next = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">this</span>.tail = <span class="keyword">this</span>.tail.prev;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(index++ &lt; position)&#123;</span><br><span class="line">          current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line">        current.next.prev = current.prev;</span><br><span class="line">        current.prev.next = current.next;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.length -= <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> current.data;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  remove(data) &#123;</span><br><span class="line">    <span class="keyword">const</span> index = <span class="keyword">this</span>.indexOf(data);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.removeAt(index);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  isEmpty()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.length == <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  size() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.length;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getHead()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.head.data;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getTail ()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.tail.data;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  insert(position, data) &#123;</span><br><span class="line">    <span class="keyword">if</span> (position &lt; <span class="number">0</span> || position &gt; <span class="keyword">this</span>.length) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(data);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.head = newNode;</span><br><span class="line">      <span class="keyword">this</span>.tail = newNode;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (position == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.head.prev = newNode;</span><br><span class="line">        newNode.next = <span class="keyword">this</span>.head;</span><br><span class="line">        <span class="keyword">this</span>.head = newNode;</span><br><span class="line"></span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span>(position == <span class="keyword">this</span>.length)&#123;</span><br><span class="line">        <span class="keyword">this</span>.tail.next = newNode;</span><br><span class="line">        newNode.prev = <span class="keyword">this</span>.tail;</span><br><span class="line">        <span class="keyword">this</span>.tail = newNode;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> current = <span class="keyword">this</span>.head;</span><br><span class="line">        <span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(index++ &lt; position)&#123;</span><br><span class="line">          current = current.next;</span><br><span class="line">        &#125;</span><br><span class="line">        newNode.next = current;</span><br><span class="line">        newNode.prev = current.prev;</span><br><span class="line">        current.prev.next = newNode;</span><br><span class="line">        current.prev = newNode;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.length += <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  append(data)&#123;</span><br><span class="line">    <span class="keyword">const</span> newNode = <span class="keyword">new</span> Node(data);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this.length'</span>, <span class="keyword">this</span>.length);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'this'</span>, <span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.length === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.tail = newNode;</span><br><span class="line">      <span class="keyword">this</span>.head = newNode;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      newNode.prev = <span class="keyword">this</span>.tail;</span><br><span class="line">      <span class="keyword">this</span>.tail.next = newNode;</span><br><span class="line">      <span class="keyword">this</span>.tail = newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.length += <span class="number">1</span>;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> list = <span class="keyword">new</span> DoubleLinklist();</span><br><span class="line">list.append(<span class="string">'a'</span>)</span><br><span class="line">list.append(<span class="string">'b'</span>)</span><br><span class="line">list.append(<span class="string">'c'</span>)</span><br><span class="line">list.append(<span class="string">'d'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(list.remove(<span class="string">'a'</span>));</span><br><span class="line"><span class="built_in">console</span>.log(list);</span><br><span class="line"><span class="built_in">console</span>.log(list.isEmpty());</span><br><span class="line"><span class="built_in">console</span>.log(list.size());</span><br><span class="line"><span class="built_in">console</span>.log(list.getHead());</span><br><span class="line"><span class="built_in">console</span>.log(list.getTail());</span><br></pre></td></tr></table></figure>
       
     </div>
     
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/React-Native/">React Native</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React Native</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
+</article>
+
+
+
+
+
+
+
+
+
   
   
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Tomas Lin</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives">
-              
-                  <span class="site-state-item-count">85</span>
-                  <span class="site-state-item-name">文章</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
-                  <span class="site-state-item-name">分類</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
-                  <span class="site-state-item-name">標籤</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/horsekitlin" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:horsekit1982@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Tomas Lin</span>
-
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
-
-
-
-
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2024 Tomas Lin
+            </div>
+            <!-- <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div> -->
+        </div>
         
-
-
-
-
-
-
-
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
         
-      </div>
-    </footer>
-
+    </div>
+</footer>
+    </div>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
     
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
 </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
 </body>
 </html>

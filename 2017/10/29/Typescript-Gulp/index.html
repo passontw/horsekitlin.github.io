@@ -1,84 +1,17 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="zh-tw">
+<html lang="zh-tw">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="theme-color" content="#222">
 
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
 
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Javascript,Typescript,Translate,">
-
-
-
-
-
-
-
-
-  <meta property="fb:admins" content="279782192201043">
-  <meta property="fb:app_id" content="179588245956664">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Tomas Lin">
 
 
 
@@ -86,293 +19,291 @@
 <meta name="keywords" content="Javascript,Typescript,Translate">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TypeScriptWithGulp">
-<meta property="og:url" content="http://yoursite.com/2017/10/29/Typescript-Gulp/index.html">
+<meta property="og:url" content="https://horsekitlin.github.io/2017/10/29/Typescript-Gulp/index.html">
 <meta property="og:site_name" content="湯瑪士的部落格">
 <meta property="og:description" content="翻譯來源TypeScriptWithGulp Gulp此篇是使用 TypeScript 和 Gulp 並且利用 Gulp 的 pipeline增加 Browserify , uglify 或 watchify 以及 Babelify等等功能 Minimal project在此範例中建立一個資料夾  proj 但是你可以建立一個你希望的名字的資料夾 12$ mkdir proj$ cd proj 先">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2021-12-15T14:25:46.002Z">
+<meta property="og:updated_time" content="2023-09-16T07:22:46.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TypeScriptWithGulp">
 <meta name="twitter:description" content="翻譯來源TypeScriptWithGulp Gulp此篇是使用 TypeScript 和 Gulp 並且利用 Gulp 的 pipeline增加 Browserify , uglify 或 watchify 以及 Babelify等等功能 Minimal project在此範例中建立一個資料夾  proj 但是你可以建立一個你希望的名字的資料夾 12$ mkdir proj$ cd proj 先">
 
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Tomas'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
+    <link rel="alternate" href="/atom.xml" title="湯瑪士的部落格" type="application/atom+xml">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/29/Typescript-Gulp/">
+    <link rel="shortcut icon" href="/favicon.png">
 
 
 
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
 
 
-  <title>TypeScriptWithGulp | 湯瑪士的部落格</title>
-  
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>TypeScriptWithGulp | 湯瑪士的部落格</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '179588245956664',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/zh_tw/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
 </script>
 
 
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
 
 
 
 
 
 
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">湯瑪士的部落格</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">技術手扎！不定期更新</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            首頁
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            關於
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
-            
-            標籤
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            分類
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/29/Typescript-Gulp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tomas Lin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="湯瑪士的部落格">
-    </span>
-
-    
-      <header class="post-header">
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Tomas Lin</a></h1>
+        </hgroup>
 
         
+        <p class="header-subtitle">技術手扎！不定期更新</p>
         
-          <h1 class="post-title" itemprop="name headline">TypeScriptWithGulp</h1>
+
         
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">發表於</span>
-              
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2017-10-29T22:21:39+08:00">
-                2017-10-29
-              </time>
-            
 
-            
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分類於</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
-                  </a>
-                </span>
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/archives/">主頁</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">標籤</a></li>
+                        
+                            <li><a href="/about/">關於我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:passon.com.tw@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/passontw" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BuckleScript/">BuckleScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Css/">Css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DesignPatten/">DesignPatten</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DevOps/">DevOps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FunctionPrograming/">FunctionPrograming</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IThome2018/">IThome2018</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IThome2023/">IThome2023</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kubernetes/">Kubernetes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Leetcode/">Leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Material-design/">Material-design</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MessageQueue/">MessageQueue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Microservies/">Microservies</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React-Native/">React Native</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reason/">Reason</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redux/">Redux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SocketCluster/">SocketCluster</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sodility/">Sodility</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Themes/">Themes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Translate/">Translate</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Truffle/">Truffle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typescript/">Typescript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VSCode/">VSCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ithome-12/">ithome 12</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-boot/">spring-boot</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
 
                 
                 
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/29/Typescript-Gulp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/10/29/Typescript-Gulp/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
         </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Tomas Lin</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Tomas Lin</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">技術手扎！不定期更新</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">主頁</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">標籤</a></li>
+                
+                    <li><a href="/about/">關於我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:passon.com.tw@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/passontw" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Typescript-Gulp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/10/29/Typescript-Gulp/" class="article-date">
+      <time datetime="2017-10-29T14:21:39.000Z" itemprop="datePublished">2017-10-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TypeScriptWithGulp
+    </h1>
+  
+
       </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+    </div>
 
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Translate/">Translate</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typescript/">Typescript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
         <h1 id="翻譯來源"><a href="#翻譯來源" class="headerlink" title="翻譯來源"></a>翻譯來源</h1><p><a href="https://www.typescriptlang.org/docs/handbook/gulp.html" target="_blank" rel="noopener">TypeScriptWithGulp</a></p>
 <h1 id="Gulp"><a href="#Gulp" class="headerlink" title="Gulp"></a>Gulp</h1><p>此篇是使用 <code>TypeScript</code> 和 <code>Gulp</code> 並且利用 <code>Gulp</code> 的 pipeline增加 <code>Browserify</code> , <code>uglify</code> 或 <code>watchify</code> 以及 <code>Babelify</code>等等功能</p>
 <h2 id="Minimal-project"><a href="#Minimal-project" class="headerlink" title="Minimal project"></a>Minimal project</h2><p>在此範例中建立一個資料夾  <code>proj</code> 但是你可以建立一個你希望的名字的資料夾</p>
@@ -449,405 +380,213 @@
       
     </div>
     
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
-          
-            <a href="/tags/Typescript/" rel="tag"># Typescript</a>
-          
-            <a href="/tags/Translate/" rel="tag"># Translate</a>
-          
-        </div>
-      
-
-      
-      
-        <div class="post-widgets">
-        
-
-        
-          <div class="social-like">
-            
-
-            
-              <div class="fb_like">
-                <div class="fb-like" data-layout="button_count" data-share="true"></div>
-              </div>
-            
-          </div>
-        
-        </div>
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/10/27/Typescript-TypescriptIn5Minutes/" rel="next" title="TypeScript-TypeScriptIn5Minutes">
-                <i class="fa fa-chevron-left"></i> TypeScript-TypeScriptIn5Minutes
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/30/Typescript-MigratingFromJavascript/" rel="prev" title="Typescript-Migrating from Javascript">
-                Typescript-Migrating from Javascript <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
   </div>
   
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-  
-    <div class="comments" id="comments">
-      <div class="fb-comments" data-href="http://yoursite.com/2017/10/29/Typescript-Gulp/" data-numposts="10" data-width="100%" data-colorscheme="light">
-      </div>
-    </div>
-  
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
     
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目錄
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            本站概覽
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Tomas Lin</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives">
-              
-                  <span class="site-state-item-count">85</span>
-                  <span class="site-state-item-name">文章</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
-                  <span class="site-state-item-count">15</span>
-                  <span class="site-state-item-name">分類</span>
-                </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
-                  <span class="site-state-item-name">標籤</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/horsekitlin" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:horsekit1982@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#翻譯來源"><span class="nav-number">1.</span> <span class="nav-text">翻譯來源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gulp"><span class="nav-number">2.</span> <span class="nav-text">Gulp</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Minimal-project"><span class="nav-number">2.1.</span> <span class="nav-text">Minimal project</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">2.1.1.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝相關的套件"><span class="nav-number">2.1.2.</span> <span class="nav-text">安裝相關的套件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">2.1.3.</span> <span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#測試-App"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">測試 App</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增加模組"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">增加模組</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#執行"><span class="nav-number">2.1.3.3.</span> <span class="nav-text">執行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Browserify"><span class="nav-number">2.1.3.4.</span> <span class="nav-text">Browserify</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#watchify-Babel-and-Uglify"><span class="nav-number">2.1.3.5.</span> <span class="nav-text">watchify, Babel and Uglify</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Watcher"><span class="nav-number">2.1.3.5.1.</span> <span class="nav-text">Watcher</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Uglify"><span class="nav-number">2.1.3.6.</span> <span class="nav-text">Uglify</span></a></li></ol></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/10/29/Typescript-Gulp/">TypeScriptWithGulp</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Tomas Lin</a></p>
+        <p><span>发布时间:</span>2017-10-29, 22:21:39</p>
+        <p><span>最后更新:</span>2023-09-16, 15:22:46</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/10/29/Typescript-Gulp/" title="TypeScriptWithGulp">https://horsekitlin.github.io/2017/10/29/Typescript-Gulp/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://horsekitlin.github.io/2017/10/29/Typescript-Gulp/　　作者: Tomas Lin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
-  </aside>
 
 
+
+    <nav id="article-nav">
         
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Tomas Lin</span>
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/10/30/Typescript-MigratingFromJavascript/">
+                    Typescript-Migrating from Javascript
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/10/27/Typescript-TypescriptIn5Minutes/">
+                    TypeScript-TypeScriptIn5Minutes
+                </a>
+            </div>
+        
+    </nav>
 
   
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#翻譯來源"><span class="toc-number">1.</span> <span class="toc-text">翻譯來源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Gulp"><span class="toc-number">2.</span> <span class="toc-text">Gulp</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimal-project"><span class="toc-number">2.1.</span> <span class="toc-text">Minimal project</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化"><span class="toc-number">2.1.1.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝相關的套件"><span class="toc-number">2.1.2.</span> <span class="toc-text">安裝相關的套件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-number">2.1.3.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#測試-App"><span class="toc-number">2.1.3.1.</span> <span class="toc-text">測試 App</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#增加模組"><span class="toc-number">2.1.3.2.</span> <span class="toc-text">增加模組</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#執行"><span class="toc-number">2.1.3.3.</span> <span class="toc-text">執行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Browserify"><span class="toc-number">2.1.3.4.</span> <span class="toc-text">Browserify</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#watchify-Babel-and-Uglify"><span class="toc-number">2.1.3.5.</span> <span class="toc-text">watchify, Babel and Uglify</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Watcher"><span class="toc-number">2.1.3.5.1.</span> <span class="toc-text">Watcher</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Uglify"><span class="toc-number">2.1.3.6.</span> <span class="toc-text">Uglify</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <!-- <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div> -->
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"TypeScriptWithGulp　| 湯瑪士的部落格　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
 
 
 
 
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
 
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-      </div>
+            <a href="/2017/10/30/Typescript-MigratingFromJavascript/" title="上一篇: Typescript-Migrating from Javascript">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/10/27/Typescript-TypescriptIn5Minutes/" title="下一篇: TypeScript-TypeScriptIn5Minutes">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/10/01/Day-05-Deploy-https-website/">Day-05-Deploy-https-website-part01</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/09/20/Day-05-ingress-controller/">Day-05-ingress-controller</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/09/19/Day-04-Deploy-to-cluster/">Day-04-Deploy-to-cluster</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/09/18/Day-03-Static-Site-Container/">Day-03-Container</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/09/15/Day-02-Express與Docker/">Day-02-Express與Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/09/15/Day-01-Docker簡介/">Day-01-Docker簡介</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/12/26/ReactNative-fastlane-Android/">React Native-fastlane-Android</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/12/React-Native-Fastlane-IOS/">React-Native-Fastlane-IOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/09/React-create-rxdb-example/">React-create-rxdb-example</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/07/React-Native-Cache-PartII/">React-Native-Cache-PartII</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/07/React-Native-Cache-PartI/">React Native Cache PartI</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/04/React-Native-Notification-Android/">React-Native-Notification-Android</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/10/04/React-Native-Notification-IOS/">React-Native-Notification-IOS</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/22/Socketcluster-client-AuthorizationEngine/">Socketcluster-client-AuthorizationEngine</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/21/SocketCluster-scc/">SocketCluster-scc</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/21/SocketCluster-Storage/">SociekCluster-Storage</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/18/Redux-Part-III/">Redux-Part-III</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/17/Redux-Part-II/">Redux-Part-II</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/16/Redux-Part-I/">Redux-Part-I</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/15/React-Native-Navigation/">React-Native-Navigation</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/15/React-Native-connect-server/">React-Native-connect-server</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/11/Java-Spring-Boot-variable/">Java-Spring-Boot-variable</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/11/Java-Spring-Boot-Initial/">Java-Spring-Boot-Initial</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/09/SocketCluster-Consumer/">SocketCluster-Consumer</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/09/Socketcluster-Cluster-initial/">SocketCluster Cluster initial.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/09/09/SocketCluster-Authorization/">SocketCluster-Authorization</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/06/ReactNative-ExportComponentUI/">React Native-ExportComponentUI</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/04/Moleculer-Start/">Moleculer-Start</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/24/RN-Platform/">React Native-Platform</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/07/Truffle-pet-user-interface/">Truffle-pet-user-interface</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/08/RN-JestInReactNative/">RN-JestInReactNative</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/02/RN-code-push/">RN-code-push</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/29/material-ui-themes/">material-ui-themes</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/13/ReasonReact-lifeCycle/">ReasonReact-LifeCycle</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/12/ReasonReact-auto-deploy/">ReasonReact-auto-deploy</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/11/ReasonReact-publish-package/">ReasonReact-publish-package</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/10/ReasonReact-Todo-Tutorial-PartII-1/">ReasonReact-Todo-Tutorial-PartII</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/10/ReasonReact-Todo-Tutorial-PartII/">ReasonReact-Todo-Tutorial-PartIII</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/10/ReasonReact-Todo-Tutorial-PartI/">ReasonReact-Todo-Tutorial-PartI</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/04/Reason-ExternalPromiseAPI/">Reason-ExternalPromiseAPI</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/04/ReasonReact-Component/">ReasonReact-Component</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/04/ReasonReact-Helloworld/">ReasonReact-Helloworld</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/02/Reason-Create-NPM-Package-PartII/">Reason-Create-NPM-Package-PartII</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/11/02/Reason-Create-NPM-Package-PartI/">Reason Create NPM Package Part-I</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/29/BuckleScript-Function/">BuckleScript-Function</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/28/Express-MongoDB-PartII/">Express-MongoDB-PartII</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/27/Express-MongoDB/">Express-MongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/27/Express-Middleware/">Express-Middleware</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/27/Reason-BasicType-Module/">Reason-BasicType-Module</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/26/Express-Router/">Express-Router</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/21/Express-helloworld-API/">Express-helloworld-API</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/20/BasicType-OptionsAndSomeAndNone/">BasicType-OptionsAndSomeAndNone</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/19/BuckleScript-Object/">BuckleScript-Object</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/14/BuckleScript-Best-Friend/">BuckleScript-Best-Friend</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/11/Reason-BasicTypeIII/">Reason-BasicTypeIII</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/10/Reason-BasicTypeII/">Reason-BasicType Part-II</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/03/Reason-BasicType/">Reason-BasicType</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/01/Reason簡介與Helloworld/">Reason簡介與Helloworld</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/05/Truffle-pet-demo/">truffle pet demo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/02/Javascript-HighOrderFunction/">Javascript-High Order Function</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/02/Redux-compose/">Map</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/RN-JestErrorWithRNRouterFlux/">React Native import Image Error</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/07/Typescript-JSX/">Typescript-JSX</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/06/TypeScript-Generic/">TypeScript-Generic</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/05/Typescript-Function/">Typescript-Function</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/04/Typescript-Classes/">Typescript-Classes</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/03/Typescript-Interfaces/">Typescript-Interfaces</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/TypeScript-VariableDecarations/">TypeScript-VariableDecarations</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/Leetcode-Q8/">Leetcode-Q8</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/31/Typescript-BasicType/">Typescript-BasicType</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/31/TypeScript-ReactAndWebpack/">TypeScript-ReactAndWebpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/Typescript-MigratingFromJavascript/">Typescript-Migrating from Javascript</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/29/Typescript-Gulp/">TypeScriptWithGulp</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/27/Typescript-TypescriptIn5Minutes/">TypeScript-TypeScriptIn5Minutes</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/Leetcode-Q7/">Leedcode-Q7</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/31/NPM-Publish-With-Gulp/">NPM publish with gulp</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/31/ReactUnitestWithJest/">ReactUnitestWithJest</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/10/Python-Decorator/">Python-Decorator</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/09/Debugging-Nodejs-With-VSCode/">Debugging-Nodejs-With-VSCode</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/31/NodeDesignPatten-06/">NodeDesignPatten-06</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/27/RabbitMQ-Routing/">RabbitMQ-Routing</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/26/RabbitMQ-PublishAndSubscribe/">RabbitMQ-PublishAndSubscribe</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/24/RabbitMQ-WorkQueue/">RabbitMQ-WorkQueue</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/22/RabbitMQ-Install/">RabbitMQ-Install</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/09/Leetcode-Q6/">Leetcode-Q6</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/09/Leetcode-Q5/">Leetcode-Q5</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/07/Leetcode-Q4/">Leetcode-Q4</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/06/Leetcode-Q3/">Leetcode-Q3</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/05/Leetcode-Q2/">Leetcode-Q2</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/03/Leetcode-Q1/">Leetcode-Q1</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/29/NodeDesignPatten-01/">NodeDesignPatten-01</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2024 Tomas Lin
+            </div>
+            <!-- <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div> -->
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
     
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-  </div>
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
 
-  
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
 </script>
 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
 </body>
 </html>
