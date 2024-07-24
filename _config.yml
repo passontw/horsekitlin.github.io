@@ -108,5 +108,5 @@ theme: yelee
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/horsekitlin/horsekitlin.github.io.git
+  repo: git@github.com:horsekitlin/horsekitlin.github.io.git
   branch: master
